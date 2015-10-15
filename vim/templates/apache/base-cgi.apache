@@ -1,0 +1,10 @@
+AddHandler image/gif .gif
+AddHandler image/jpeg .jpg
+AddHandler image/png .png
+AddHandler text/html .html .htm
+AddHandler text/css .css
+AddHandler cgi-script .cgi 
+AddHandler application/x-javascript .js
+
+AddType application/msexcel .csv
+AddHandler application/msexcel .csv

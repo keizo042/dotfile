@@ -1,0 +1,27 @@
+name:            
+version:         1.1.1
+license:         MIT
+license-file:    LICENSE
+author:          keizo <keizo.bookman@gmail.com>
+maintainer:      keizo <keizo.bookman@gmail.com>
+synopsis:        
+description:     template
+category:        
+stability:       Stable
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        
+extra-source-files: README.md ChangeLog.md
+
+library
+    if os(windows)
+        cpp-options: -DWINDOWS
+
+    build-depends: 
+    ghc-options:     -Wall
+
+    if !os(windows)
+         build-depends: unix
+
+source-repository head
+  type:     git
