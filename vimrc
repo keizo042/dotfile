@@ -368,7 +368,36 @@ let g:tagbar_type_go = {
                         \ 'ctagsbin'  : 'gotags',
                         \ 'ctagsargs' : '-sort -silent'
                         \ }
-let g:tagbar_type_haskell = {
+ if executable('lushtags')
+    let g:tagbar_type_haskell = {
+        \ 'ctagsbin' : 'lushtags',
+        \ 'ctagsargs' : '--ignore-parse-error --',
+        \ 'kinds' : [
+            \ 'm:module:0',
+            \ 'e:exports:1',
+            \ 'i:imports:1',
+            \ 't:declarations:0',
+            \ 'd:declarations:1',
+            \ 'n:declarations:1',
+            \ 'f:functions:0',
+            \ 'c:constructors:0'
+        \ ],
+        \ 'sro' : '.',
+        \ 'kind2scope' : {
+            \ 'd' : 'data',
+            \ 'n' : 'newtype',
+            \ 'c' : 'constructor',
+            \ 't' : 'type'
+        \ },
+        \ 'scope2kind' : {
+            \ 'data' : 'd',
+            \ 'newtype' : 'n',
+            \ 'constructor' : 'c',
+            \ 'type' : 't'
+        \ }
+    \ }
+elseif  executable('hasktags')
+let  g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
     \ 'ctagsargs' : '-x -c -o-',
     \ 'kinds'     : [
@@ -399,6 +428,7 @@ let g:tagbar_type_haskell = {
         \ 'type'   : 't'
     \ }
 \ }
+endif 
 "nim tabgar
 let g:tagbar_type_nim = {
       \ 'ctagstype' : 'nim',
@@ -583,18 +613,20 @@ nnoremap M :<C-u>call append(expand('.'), '')<Cr>j
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
+"user command 
+command! W WatchdogsRun
+
 augroup haskell_keymaps
     autocmd!
     autocmd FileType haskell nmap <C-n> GhcModType
     autocmd FileType haskell nmap  <C-x> GhcModTypeInsert
-    autocmd BufWritePost *.hs GhcModCheck
+"    autocmd BufWritePost *.hs GhcModCheck
+    autocmd FileType haskell command! W GhcModCheck
 
 augroup End
 
 
 
-"user command 
-command! W WatchdogsRun
 
 "command! -buffer -nargs=+ -complete=customlist,s:completePackage ImportAll call s:wrapImportAll(<f-args>)
 "command! -buffer -nargs=* -complete=customlist,s:completePackage ImportAsAll call s:WrapImportAsAll( <f-args>)
