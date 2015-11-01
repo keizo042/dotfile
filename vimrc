@@ -34,6 +34,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'katono/rogue.vim'
+NeoBundle 'thinca/vim-ref'
 "NeoBundle 'aharisu/vise'
 "NeoBundle 'mattn/lisper-vim'
 "NeoBundle 'airblade/vim-rooter'
@@ -98,7 +99,7 @@ NeoBundleLazy 'slim-template/vim-slim', {
 
 "NeoBundleLazy 'fatih/vim-go'
 "haskell
-NeoBundleLazy 'kana/vim-filetype-haskell',{
+NeoBundleLazy 'itchyny/vim-haskell-indent',{
                         \ 'autoload' : { 
                         \   'filetypes' : [ 'haskell' ] ,
                         \           },
@@ -123,6 +124,14 @@ NeoBundleLazy 'eagletmt/unite-haddock',{
                         \   'filetypes' : [ 'haskell' ] ,
                         \           },
                         \ }
+
+NeoBundle 'ujihisa/ref-hoogle',{
+                        \ 'autoload' : { 
+                        \   'filetypes' : [ 'haskell' ] ,
+                        \           },
+                        \ }
+
+
 NeoBundleLazy 'pbrisbin/vim-syntax-shakespeare',{
                         \ 'autoload' : { 
                         \   'filetypes' : [ 'hamlet', 'cassius', 'lucius', 'julius' ] ,
@@ -618,11 +627,10 @@ command! W WatchdogsRun
 
 augroup haskell_keymaps
     autocmd!
-    autocmd FileType haskell nmap <C-n> GhcModType
-    autocmd FileType haskell nmap  <C-x> GhcModTypeInsert
+    autocmd FileType haskell nmap <silent> <C-n>  :GhcModType<CR>
+    autocmd FileType haskell nmap <silent> <C-x> :GhcModTypeInsert<CR>
 "    autocmd BufWritePost *.hs GhcModCheck
     autocmd FileType haskell command! W GhcModCheck
-
 augroup End
 
 
