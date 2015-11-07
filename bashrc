@@ -6,12 +6,11 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-#PS1='[\u@\h \W]\$ '
 export PATH=$PATH:~/.local/bin
 EDITOR=vim
 
 #
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
 
 case "$TERM" in
     linux*)
