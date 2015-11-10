@@ -1,4 +1,5 @@
 "keizo'vimrc
+
 if has('vim_starting')
         set nocompatible               " Be iMproved
         set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -639,6 +640,5 @@ augroup End
 "command! -buffer -nargs=+ -complete=customlist,s:completePackage ImportAll call s:wrapImportAll(<f-args>)
 "command! -buffer -nargs=* -complete=customlist,s:completePackage ImportAsAll call s:WrapImportAsAll( <f-args>)
 "command! Goimports  echo system("go list -f '{{ join .Imports \"\n\" }}'" .   expand("%:p"))
-
 
 
