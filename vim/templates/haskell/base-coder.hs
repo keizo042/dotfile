@@ -1,4 +1,3 @@
-module main where
 import Control.Applicative
 
 
