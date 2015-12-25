@@ -240,11 +240,11 @@ NeoBundleLazy 'Shougo/vinarise',{
                         \ 'disabled' : !has('python')
                         \}
 "latex
-NeoBundleLazy 'git://git.code.sf.net/p/vim-latex/vim-latex',{
-                        \ 'autoload' : {
-                        \       'filetypes' : [ 'tex' ],
-                        \   }
-                        \}
+"NeoBundleLazy 'git://git.code.sf.net/p/vim-latex/vim-latex',{
+"                        \ 'autoload' : {
+"                        \       'filetypes' : [ 'tex' ],
+"                        \   }
+"                        \}
 "data structure
 "NeoBundleLazy 'othree/xml.vim', {
 "                        \ 'autoload' : {
