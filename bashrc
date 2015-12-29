@@ -55,6 +55,7 @@ export PATH=$PATH:~/bin/build/.cabal-sandbox/bin
 export PATH=$PATH:~/bin/darcs/.cabal-sandbox/bin
 export PATH=$PATH:~/bin/gtk2hs-buildtools/.cabal-sandbox/bin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/.opam/system/bin
 
 
 
