@@ -68,6 +68,11 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
                         \       'filetypes' : [ 'cpp' ], 
                         \           },
                         \ }
+NeoBundleLazy 'rhysd/vim-clang-format', {
+                        \ 'autoload' : {
+                        \        'filetypes' : [ 'cpp' ],
+                        \           },
+                        \ }
 NeoBundleLazy 'osyo-manga/vim-stargate', {
                         \ 'autoload' : {
                         \       'filetypes' : 'cpp'
@@ -241,6 +246,11 @@ NeoBundleLazy 'maksimr/vim-jsbeautify' ,{
                         \           },
                         \}
 
+NeoBundleLazy 'toyamarinyon/vim-swift', {
+                        \ 'autoload' : {
+                        \        'filetypes' : 'swift',
+                        \           },
+                        \ }
 NeoBundleLazy 'Shougo/vinarise',{
                         \ 'disabled' : !has('python')
                         \}
