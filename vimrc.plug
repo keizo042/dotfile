@@ -34,14 +34,17 @@ Plug 'rhysd/vim-clang-format', {
 Plug 'osyo-manga/vim-stargate', {
                         \       'for' : 'cpp'
                         \ }
+
 Plug 'JesseKPhillips/d.vim', {
                         \       'for' : [ 'd' ]
                         \}
+
 Plug 'Shougo/vimproc.vim' 
 Plug 'osyo-manga/vim-reunions' 
 Plug 'osyo-manga/vim-marching', {
                         \  'for' : ['c', 'cpp'] 
                         \ }
+Plug 'osyo-manga/shabadou.vim'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'fatih/vim-go', { 'for' : [ 'go' ] }
 Plug 'vim-jp/vim-go-extra', {
