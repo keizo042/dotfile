@@ -1,0 +1,196 @@
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-plug',
+            \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+
+Plug 'vim-jp/vital.vim'        "vim lib
+Plug 'vim-scripts/rdark'       "syntex highlight
+Plug 'tpope/vim-surround'      "ext obj ctrl
+Plug 'tpope/vim-fugitive'
+Plug 'vcscommand.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'vim-jp/vimdoc-ja'
+Plug 'Shougo/unite.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'majutsushi/tagbar'
+Plug 'Shougo/vimfiler.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'katono/rogue.vim'
+Plug 'thinca/vim-ref'
+
+" Plug 'aharisu/vise'
+" Plug 'mattn/lisper-vim'
+" Plug 'airblade/vim-rooter'
+" template
+
+Plug 'mattn/sonictemplate-vim'
+ Plug 'mattn/emmet-vim', { 'for' : [ 'html' ]}
+Plug 'othree/html5.vim', {'for' : [ 'html'  ] }
+Plug 'vim-jp/cpp-vim', { 'for' : [ 'cpp' ] }
+Plug 'rhysd/vim-clang-format', {
+                        \        'for' : [ 'cpp' ]
+                        \ }
+Plug 'osyo-manga/vim-stargate', {
+                        \       'for' : 'cpp'
+                        \ }
+Plug 'JesseKPhillips/d.vim', {
+                        \       'for' : [ 'd' ]
+                        \}
+Plug 'Shougo/vimproc.vim' 
+Plug 'osyo-manga/vim-reunions' 
+Plug 'osyo-manga/vim-marching', {
+                        \  'for' : ['c', 'cpp'] 
+                        \ }
+Plug 'osyo-manga/vim-watchdogs'
+Plug 'fatih/vim-go', { 'for' : [ 'go' ] }
+Plug 'vim-jp/vim-go-extra', {
+                        \       'for' : [ 'go' ],
+                        \}
+Plug 'slim-template/vim-slim', {
+                        \       'for' : ['ruby' ],
+                        \}
+
+"Plug 'fatih/vim-go'
+"haskell
+Plug 'itchyny/vim-haskell-indent',{
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
+Plug 'eagletmt/ghcmod-vim',{
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
+Plug 'ujihisa/unite-haskellimport',{
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
+Plug 'dag/vim2hs', {
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
+Plug 'eagletmt/unite-haddock',{
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
+
+Plug 'ujihisa/ref-hoogle',{
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
+
+Plug 'cohama/the-ocamlspot.vim', {
+                        \       'for' : 'ocaml',
+                        \ }
+
+Plug 'pbrisbin/vim-syntax-shakespeare',{
+                        \   'for' : [ 'hamlet', 'cassius', 'lucius', 'julius' ] ,
+                        \ }
+"erlang
+Plug 'vim-erlang/vim-erlang-runtime', {
+                        \       'for' : 'erlang' ,
+                        \ }
+" erlangのオムニ補完
+Plug 'vim-erlang/vim-erlang-omnicomplete', {
+                        \       'for' : 'erlang' ,
+                        \ }
+
+" erlファイルをerlangとして認識する
+
+"Plug 'menezrick/vimerl'
+
+
+"scala
+Plug 'derekwyatt/vim-scala', {
+                        \   'for' : [ 'scala' ],
+                        \ }
+Plug 'gre/play2vim',{
+                        \   'for' : [ 'scala' ],
+                        \}
+"clojure
+Plug 'guns/vim-clojure-static', {
+                        \       'for' : [ 'clojure' ],
+                        \}
+
+Plug 'tpope/vim-fireplace', {
+                        \       'for' : [ 'clojure' ],
+                        \}
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'kongo2002/fsharp-vim', {
+                        \       'for' : 'fsharp',
+                        \ }
+Plug 'zah/nimrod.vim', {
+                        \       'for' : 'nim',
+                        \ }
+"vim
+Plug 'ynkdir/vim-vimlparser', {
+                        \       'for' : [ 'vim'],
+                        \}
+"ocaml
+"Plug 'cohama/the-ocamlspot.vim',{
+"                        \       'for' : [ 'ocaml' ],
+"                        \ }
+
+"TypeScript
+Plug 'leafgarland/typescript-vim',{
+                        \       'for' : ['typescript'],
+                        \ }
+Plug 'clausreinke/typescript-tools',{
+                        \       'for' : ['typescript'],
+                        \ }
+"haxe
+Plug 'jdonaldson/vaxe',{
+                        \       'for' : ['haxe']
+                        \}
+Plug 'MarcWeber/vim-haxe-syntax',{
+                        \       'for' : ['haxe'],
+                        \}
+Plug 'pangloss/vim-javascript',{
+                        \       'for' : 'javascript',
+                        \}
+Plug 'maksimr/vim-jsbeautify' ,{
+                        \       'for' : 'javascript',
+                        \}
+
+Plug 'toyamarinyon/vim-swift', {
+                        \        'for' : 'swift',
+                        \ }
+"Plug 'Shougo/vinarise',{
+"                        \ 'disabled' : !has('python')
+"                        \}
+"latex
+Plug 'vim-latex/vim-latex',{
+                        \       'for' : [ 'tex' ],
+                        \}
+"data structure
+"Plug 'othree/xml.vim', {
+"                        \ 'autoload' : {
+"                        \       'for' : 'xml',
+"                        \       }
+"                        \ }
+Plug 'elzr/vim-json',{
+                        \       'for' : [ 'json' ],
+                        \}
+Plug 'ingydotnet/yaml-vim',{
+                        \       'for' : [ 'yaml' ],
+                        \}
+Plug 'pld-linux/vim-syntax-vcl',{
+                        \       'for' : [ 'vcl' ],
+                        \}
+Plug 'smerrill/vcl-vim-plugin',{
+                        \       'for' : [ 'vcl' ],
+                        \}
+"Plug 'Yggdroot/indentLine'
+"=========================
+"os diff plugin
+
+Plug 'Shougo/vimshell.vim',{
+                        \'disabled' : has('win')
+                        \}
+"disable windows
+"Plug 'tyru/open-browser.vim',{
+"                        \ 'disabled' : has('win')
+"                        \}   
+"Plug 'tyru/open-browser-github.vim', {
+"                        \ 'disabled' : has('win')
+"                        \}
+""linux only
+"Plug 'itchyny/calendar.vim', {
+"                        \ 'disabled' : !has('unix'),
+"                        \}
+call plug#end()
+

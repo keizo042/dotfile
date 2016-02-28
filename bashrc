@@ -10,7 +10,7 @@ export PATH=$PATH:~/.local/bin
 EDITOR=vim
 
 #
-#PS1='[\u@\h \W]\$ '
+PS1='[(\u@\h) \W]\$ '
 
 case "$TERM" in
     linux*)
@@ -47,8 +47,6 @@ export CLOUDSDK_PYTHON=/usr/bin/python2
 export PATH=$PATH:~/bin/go_appengine
 #eval "$(hub alias -s)"
 export PATH=$PATH:~/bin/ghc-mod/.cabal-sandbox/bin
-#export PATH=$PATH:/home/keizo/.gem/ruby/2.1.0/bin
-export PATH=$PATH:/home/keizo/.gem/ruby/2.2.0/bin
 export PATH=$PATH:/home/keizo/bin/mruby/bin
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/bin/build/.cabal-sandbox/bin
