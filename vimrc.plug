@@ -18,6 +18,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'katono/rogue.vim'
 Plug 'thinca/vim-ref'
+Plug 'thinca/vim-quickrun'
 
 " Plug 'aharisu/vise'
 " Plug 'mattn/lisper-vim'
