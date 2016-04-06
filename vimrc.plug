@@ -48,11 +48,11 @@ Plug 'osyo-manga/vim-marching', {
 Plug 'osyo-manga/shabadou.vim'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'fatih/vim-go', { 'for' : [ 'go' ] }
+Plug 'rust-lang/rust.vim', { 'for' :  'rust' }
 Plug 'slim-template/vim-slim', {
                         \       'for' : ['ruby' ],
                         \}
 
-"Plug 'fatih/vim-go'
 "haskell
 Plug 'itchyny/vim-haskell-indent',{
                         \   'for' : [ 'haskell' ] ,
