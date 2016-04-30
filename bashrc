@@ -21,11 +21,11 @@ case "$TERM" in
         ;;
 esac
 
-alias l='ls -F --color=auto'
-alias ls='ls -F --color=auto'
-alias sl='ls -F --color=auto'
-alias la='ls -aF --color=auto'
-alias ll='ls -lF --color=auto'
+#alias l='ls -F --color=auto'
+#alias ls='ls -F --color=auto'
+#alias sl='ls -F --color=auto'
+#alias la='ls -aF --color=auto'
+#alias ll='ls -lF --color=auto'
 alias x11=startx
 alias dc=cd
 alias p=pwd
