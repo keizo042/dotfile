@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+##alias ls='ls --color=auto'
 export PATH=$PATH:~/.local/bin
 EDITOR=vim
 
@@ -21,11 +21,11 @@ case "$TERM" in
         ;;
 esac
 
-alias l='ls -F --color=auto'
-alias ls='ls -F --color=auto'
-alias sl='ls -F --color=auto'
-alias la='ls -aF --color=auto'
-alias ll='ls -lF --color=auto'
+#alias l='ls -F --color=auto'
+#alias ls='ls -F --color=auto'
+#alias sl='ls -F --color=auto'
+#alias la='ls -aF --color=auto'
+#alias ll='ls -lF --color=auto'
 alias x11=startx
 alias dc=cd
 alias p=pwd
