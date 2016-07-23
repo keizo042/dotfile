@@ -338,6 +338,8 @@ cmap <silent> qq qa
 nnoremap M :<C-u>call append(expand('.'), '')<Cr>j
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+
 
 "user command 
 command! W WatchdogsRun
