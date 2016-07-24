@@ -20,32 +20,35 @@ case "$TERM" in
     *)
         ;;
 esac
-if [[ `uname` == 'Linux' ]]; then
+if [[ "$(uname)" == "Linux" ]]; then
+
 alias l='ls -F --color=auto'
 alias ls='ls -F --color=auto'
 alias sl='ls -F --color=auto'
 alias la='ls -aF --color=auto'
 alias ll='ls -lF --color=auto'
+alias x11=startx
+alias xbset='xbacklight -set'
+alias pac=pacman
+
 else
+
 alias l='ls -F'
 alias ls='ls -F'
 alias sl='ls -F'
 alias la='ls -aF'
 alias ll='ls -lF'
+
 fi
-alias x11=startx
+
 alias dc=cd
 alias p=pwd
 alias g=git
 alias ,,='..'
 alias cl=clear
-alias pac=pacman
-alias xbset='xbacklight -set'
-alias networkminer='/usr/bin/mono /home/keizo/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
+alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias mrbinstall="git clone http://github.com/mruby/mruby.git"
 alias h2spec='$GOPATH/src/github.com/summerwind/h2spec/cmd/cmd'
-alias ghr='$HOME/bin/ghr/ghr'
-alias direnv="~/bin/direnv/direnv"
 
 export GOPATH=$HOME/go
 export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
@@ -53,12 +56,7 @@ export PATH=$PATH:$HOME/go/bin
 export CLOUDSDK_PYTHON=/usr/bin/python2
 export PATH=$PATH:~/bin/go_appengine
 #eval "$(hub alias -s)"
-export PATH=$PATH:~/bin/ghc-mod/.cabal-sandbox/bin
-export PATH=$PATH:/home/keizo/bin/mruby/bin
 export PATH=$PATH:~/bin
-export PATH=$PATH:~/bin/build/.cabal-sandbox/bin
-export PATH=$PATH:~/bin/darcs/.cabal-sandbox/bin
-export PATH=$PATH:~/bin/gtk2hs-buildtools/.cabal-sandbox/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/.opam/system/bin
 
