@@ -16,3 +16,8 @@ else
     mkdir -p $HOME/.vim/templates
 fi
 ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/templates
+
+if [ -z "$(git config --get core.excludesfile)" ] then
+git config --global core.excludesfile $CONFIG_DIR/gitignore
+else
+
