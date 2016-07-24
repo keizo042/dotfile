@@ -79,4 +79,6 @@ export EDITOR=vim
 #sudo chmod 4755 /usr/local/sbin/chrome-devel-sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
+if [ -e $HOME/.bashrc.local ]; then
 source $HOME/.bashrc.local
+fi
