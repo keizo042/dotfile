@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-CONFIG_DIR=$HOME/.conf
+CONFIG_DIR=$HOME/.config
+
+if [ ! -e $CONFIG_DIR ]; then
+    mkdir $CONFIG_DIR
+fi
 if [ ! -e $HOME/.bashrc ]; then
 ln -s $CONFIG_DIR/dotfile/bash $HOME/.bashrc
 fi
