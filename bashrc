@@ -63,7 +63,6 @@ export PATH=$PATH:$HOME/.opam/system/bin
 
 
 export EDITOR=vim
-# ctags -R include/mrbconf.h include/mrbconf.h include/mruby/*.h mrbgems/mruby-*/src/*.h mrbgems/mruby-*/src/*.c src/*.c src/*.h 
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '$HOME/bin/google-cloud-sdk/path.bash.inc'
