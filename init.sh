@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
-ln -s $HOME/.conf/dotfile/bash $HOME/.bashrc
-ln -s $HOME/.conf/dotfile/vim/templates $HOME/.vim/templates
-ln -s $HOME/.conf/dotfile/vimrc $HOME/.vimrc
-# ln -s $HOME/.conf/dotfile/xmonad.hs $HOME/.monad/xmonad.hs
+
+CONFIG_DIR=$HOME/.conf
+if [ -e $HOME/.bashrc ] then
+else
+ln -s $CONFIG_DIR/dotfile/bash $HOME/.bashrc
+fi
+
+if [ -e $HOME/.vimrc ] then
+else
+ln -s $CONFIG_DIR/dotfile/vimrc $HOME/.vimrc
+fi
+
+if [ -e $HOME/.vim/templates ] then
+else
+    mkdir -p $HOME/.vim/templates
+fi
+ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/templates
