@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
 CONFIG_DIR=$HOME/.conf
-if [ -e $HOME/.bashrc ] then
-else
+if [ ! -e $HOME/.bashrc ]; then
 ln -s $CONFIG_DIR/dotfile/bash $HOME/.bashrc
 fi
 
-if [ -e $HOME/.vimrc ] then
-else
+if [ ! -e $HOME/.vimrc ]; then
 ln -s $CONFIG_DIR/dotfile/vimrc $HOME/.vimrc
 fi
 
-if [ -e $HOME/.vim/templates ] then
-else
-    mkdir -p $HOME/.vim/templates
+if [ ! -e $HOME/.vim/ ]; then
+    mkdir -p $HOME/.vim/
 fi
-ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/templates
 
-if [ -z "$(git config --get core.excludesfile)" ] then
-git config --global core.excludesfile $CONFIG_DIR/gitignore
-else
+if [ ! -L $HOME/.vim/templates ]; then
+    ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/templates
+fi
 
+if [ -z "$(git config --get core.excludesfile)" ]; then
+git config --global core.excludesfile $CONFIG_DIR/gitignore 
+fi
+
+exit 1

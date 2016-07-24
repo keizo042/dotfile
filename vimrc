@@ -64,7 +64,7 @@ let g:hpaste_author = 'keizo'
 let g:haskell_conceal = 0
 
 "sonictemplate.vim
-let g:sonictemplate_vim_template_dir=expand("~/.vim/template")
+let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
 
 "golang tagbar
 let g:tagbar_type_go = {
