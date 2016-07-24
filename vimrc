@@ -8,8 +8,8 @@ if has('vim_starting')
     call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
   end
 endif
-
 source $HOME/.config/dotfile/vimrc.plug
+
 "env varlable
 "set foldmethod=syntax
 
