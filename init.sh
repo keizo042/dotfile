@@ -18,7 +18,7 @@ if [ ! -e $HOME/.vim/ ]; then
 fi
 
 if [ ! -L $HOME/.vim/templates ]; then
-    ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/templates
+    ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/
 fi
 
 if [ -z "$(git config --get core.excludesfile)" ]; then
