@@ -1,6 +1,28 @@
 #!/usr/bin/env bash
-ln -s $HOME/.config/dotfile/bash $HOME/.bashrc
-mkdir -p $HOME/.vim/templates
-ln -s $HOME/.config/dotfile/vim/templates $HOME/.vim/templates
-ln -s $HOME/.config/dotfile/vimrc $HOME/.vimrc
-# ln -s $HOME/.config/dotfile/xmonad.hs $HOME/.monad/xmonad.hs
+
+CONFIG_DIR=$HOME/.config
+
+if [ ! -e $CONFIG_DIR ]; then
+    mkdir $CONFIG_DIR
+fi
+if [ ! -e $HOME/.bashrc ]; then
+ln -s $CONFIG_DIR/dotfile/bash $HOME/.bashrc
+fi
+
+if [ ! -e $HOME/.vimrc ]; then
+ln -s $CONFIG_DIR/dotfile/vimrc $HOME/.vimrc
+fi
+
+if [ ! -e $HOME/.vim/ ]; then
+    mkdir -p $HOME/.vim/
+fi
+
+if [ ! -L $HOME/.vim/templates ]; then
+    ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim/templates
+fi
+
+if [ -z "$(git config --get core.excludesfile)" ]; then
+git config --global core.excludesfile $CONFIG_DIR/gitignore 
+fi
+
+exit 1

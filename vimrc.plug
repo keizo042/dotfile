@@ -181,6 +181,10 @@ Plug 'smerrill/vcl-vim-plugin',{
 Plug 'jvoorhis/coq.vim', {
                         \   'for' : [ 'coq' ],
                         \ }
+"Plug 'vim-scripts/CoqIDE', {
+"                        \ 'for' : [ 'coq' ],
+"                        \ }
+
 Plug 'eagletmt/coqtop-vim', {
                         \ 'for' : [ 'coq' ],
                         \ }

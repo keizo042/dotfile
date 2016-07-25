@@ -8,8 +8,8 @@ if has('vim_starting')
     call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
   end
 endif
-
 source $HOME/.config/dotfile/vimrc.plug
+
 "env varlable
 "set foldmethod=syntax
 
@@ -64,7 +64,7 @@ let g:hpaste_author = 'keizo'
 let g:haskell_conceal = 0
 
 "sonictemplate.vim
-let g:sonictemplate_vim_template_dir=expand("~/.vim/template")
+let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
 
 "golang tagbar
 let g:tagbar_type_go = {
@@ -175,8 +175,8 @@ let g:tagbar_type_nim = {
 
 
 "=My default==================================================
-if has("./.vimrc.local")
-        source ./.vimrc.local
+if has("$HOME/.vimrc.local")
+        source $HOME/.vimrc.local
 endif
 
 
@@ -338,6 +338,8 @@ cmap <silent> qq qa
 nnoremap M :<C-u>call append(expand('.'), '')<Cr>j
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+
 
 "user command 
 command! W WatchdogsRun
