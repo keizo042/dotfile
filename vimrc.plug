@@ -53,6 +53,8 @@ Plug 'rust-lang/rust.vim', { 'for' :  'rust' }
 Plug 'slim-template/vim-slim', {
                         \       'for' : ['ruby' ],
                         \}
+Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
+
 
 "haskell
 Plug 'itchyny/vim-haskell-indent',{
