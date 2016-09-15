@@ -179,7 +179,7 @@ let g:tagbar_type_nim = {
 
 
 "=My default==================================================
-if has("$HOME/.vimrc.local")
+if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
 
