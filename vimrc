@@ -261,6 +261,7 @@ function! s:Tab_size_define(tab_size)
                 let &l:softtabstop=4
         end
 endfunction
+
 function! s:Tab_hard_define()
         let g:tab_seted=1
         setlocal noexpandtab
@@ -268,6 +269,14 @@ endfunction
 if g:tab_seted !=1
         call s:Tab_size_define(4)
 endif
+
+function! s:InstallRustEnv()
+    if !isdirectory(expand("~/bin/racer"))
+    system("git clone https://github.com/phildawes/racer.git ~/bin/racer")
+    system("cd ~/bin/racer;cargo build --release")
+    endif
+    
+endfunction
 
 
 "augroups
