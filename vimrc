@@ -22,6 +22,10 @@ let g:calendar_frame = 'default'
 "plugin user variable
 let s:Vital = vital#of('vital')
 
+if !exists('loaded_matchit')
+      " matchitを有効化
+        runtime macros/matchit.vim
+endif
 
 let g:quickrun_config = {
                         \   "_" : {
@@ -175,7 +179,7 @@ let g:tagbar_type_nim = {
 
 
 "=My default==================================================
-if has("$HOME/.vimrc.local")
+if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
 
@@ -350,8 +354,6 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 
-"user command 
-command! W WatchdogsRun
 
 augroup haskell_keymaps
     autocmd!
