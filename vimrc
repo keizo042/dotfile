@@ -345,8 +345,6 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 
-"user command 
-command! W WatchdogsRun
 
 augroup haskell_keymaps
     autocmd!
