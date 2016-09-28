@@ -164,6 +164,9 @@ Plug 'elzr/vim-json',{
 Plug 'ingydotnet/yaml-vim',{
                         \       'for' : [ 'yaml' ],
                         \}
+Plug 'cespare/vim-toml', {
+                        \       'for' : [ 'toml' ],
+                        \}
 Plug 'pld-linux/vim-syntax-vcl',{
                         \       'for' : [ 'vcl' ],
                         \}
