@@ -16,16 +16,14 @@ myLogHook  = do
 workspaceName :: [String]
 workspaceName = ["1","2","3","4","5","6","7","8","9"]
 
+cfg = defaultConfig
+
 main = do
-    xmonad  =<< xmobar myConfig
+    xmonad  =<< xmobar cfg
     where
-        myConfig = defaultConfig
 	    { terminal = "terminator"
 	    , workspaces = workspaceName
 	    , startupHook = myStartUp
             , logHook =  myLogHook
-	    , borderWidth = 4
+	    , borderWidth = 2
 	    }
-
-
-
