@@ -9,6 +9,7 @@ if has('vim_starting')
   end
 endif
 source $HOME/.config/dotfile/vimrc.plug
+"curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
 
 "env varlable
 "set foldmethod=syntax
