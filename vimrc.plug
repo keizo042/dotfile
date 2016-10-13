@@ -8,12 +8,10 @@ Plug 'vim-scripts/rdark'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-jp/vital.vim'
-Plug 'vcscommand.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
-Plug 'Shougo/vimfiler.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'thinca/vim-ref'
 Plug 'thinca/vim-quickrun'
@@ -71,6 +69,9 @@ Plug 'ujihisa/ref-hoogle',{
                         \ }
 
 Plug 'cohama/the-ocamlspot.vim', {
+                        \       'for' : 'ocaml',
+                        \ }
+Plug 'rgrinberg/vim-ocaml', {
                         \       'for' : 'ocaml',
                         \ }
 

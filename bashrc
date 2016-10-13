@@ -51,6 +51,7 @@ alias mrbinstall="git clone http://github.com/mruby/mruby.git"
 export GOPATH=$HOME/go
 export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 export CLOUDSDK_PYTHON=/usr/bin/python2
 export PATH=$PATH:~/bin/go_appengine
 #eval "$(hub alias -s)"

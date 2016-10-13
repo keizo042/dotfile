@@ -9,6 +9,7 @@ if has('vim_starting')
   end
 endif
 source $HOME/.config/dotfile/vimrc.plug
+"curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
 
 "env varlable
 "set foldmethod=syntax
@@ -66,6 +67,8 @@ let g:incsearch#auto_nohlsearch=0
 "haskell
 let g:hpaste_author = 'keizo'
 let g:haskell_conceal = 0
+let g:haskell_conceal_enumerations = 0
+let g:haskell_conceal_wide = 0
 
 "sonictemplate.vim
 let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
@@ -246,6 +249,7 @@ set incsearch
 set showmatch
 set ambiwidth=double "unicode encoding setting
 set browsedir=buffer
+set nofoldenable
 "set complete
 
 "syntax
@@ -303,7 +307,7 @@ augroup END
 
 augroup LANGUAGES_SETTING
         autocmd!
-        autocmd! BufNewFile,BufRead *.html,*.cc,*.cpp,*.cxx,*.xx,*.tmlp,*.rb,*.hs,*.ml,*.scala call s:Tab_size_define(2)
+        autocmd! BufNewFile,BufRead *.cabal,*.html,*.cc,*.cpp,*.cxx,*.xx,*.tmlp,*.rb,*.hs,*.ml,*.scala call s:Tab_size_define(2)
         autocmd! BufNewFile,BufRead *.py,*.c,,*.cxx,*.hx,*.d, call s:Tab_size_define(4)
         autocmd! BufNewFile,BufRead *.go call s:Tab_hard_define()
         autocmd! BufNewFile,BufRead *.go nnoremap <C-n> <C-x><C-o>
