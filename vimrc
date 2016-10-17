@@ -375,6 +375,10 @@ augroup haskell_keymaps
     autocmd FileType haskell command! W GhcModCheck
 augroup End
 
+augroup coq_keymaps
+    autocmd! 
+    autocmd FileType coq nmap <LocalLeader>s :CoqStart<CR>
+augroup End
 
 
 
