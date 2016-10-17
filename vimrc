@@ -62,13 +62,21 @@ call watchdogs#setup(g:quickrun_config)
 let g:incsearch#auto_nohlsearch=0
 
 "golang omni-complete
-"if github.com/nsf/gocode 
 
 "haskell
 let g:hpaste_author = 'keizo'
 let g:haskell_conceal = 0
 let g:haskell_conceal_enumerations = 0
 let g:haskell_conceal_wide = 0
+
+"if executable("stack")
+"    let s:haskell_bins = ["ghc-mod", "endihasktags", "codex","hscope", "pointfree", "pointful", "hoogle", "stylish-haskell" ]
+"    for bin in s:haskell_bins
+"        if !executable(bin)
+"            call system("stack install " + bin)
+"        endif
+"    endfor
+"endif
 
 "sonictemplate.vim
 let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
