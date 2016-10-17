@@ -28,7 +28,7 @@ Plug 'mattn/emmet-vim', { 'for' : [ 'html' ]}
 Plug 'othree/html5.vim', {'for' : [ 'html'  ] }
 Plug 'vim-jp/cpp-vim', { 'for' : [ 'cpp' ] }
 Plug 'rhysd/vim-clang-format', {
-                        \        'for' : [ 'cpp' ]
+                        \        'for' : [ 'cpp', 'c' ]
                         \ }
 Plug 'osyo-manga/vim-stargate', {
                         \       'for' : 'cpp'
@@ -179,6 +179,9 @@ Plug 'jvoorhis/coq.vim', {
                         \   'for' : [ 'coq' ],
                         \ }
 Plug 'eagletmt/coqtop-vim', {
+                        \ 'for' : [ 'coq' ],
+                        \ }
+Plug 'vim-scripts/CoqIDE', {
                         \ 'for' : [ 'coq' ],
                         \ }
 
