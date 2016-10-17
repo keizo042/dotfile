@@ -181,9 +181,9 @@ Plug 'jvoorhis/coq.vim', {
 Plug 'eagletmt/coqtop-vim', {
                         \ 'for' : [ 'coq' ],
                         \ }
-Plug 'vim-scripts/CoqIDE', {
-                        \ 'for' : [ 'coq' ],
-                        \ }
+"Plug 'vim-scripts/CoqIDE', {
+"                        \ 'for' : [ 'coq' ],
+"                        \ }
 
 ""linux only
 "Plug 'itchyny/calendar.vim', {
