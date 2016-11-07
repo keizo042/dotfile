@@ -15,7 +15,7 @@ myFadeHook = composeAll [ opaque ]
 
 myLogHook  = do
     fadeWindowsLogHook myFadeHook
-    fadeInactiveLogHook 0xffdddddd
+    fadeInactiveLogHook 0xdfffffff
     takeTopFocus
     dynamicLog
 --    dynamicLogWithPP $  defaultPP {ppOutput = hPutStrLn h}
