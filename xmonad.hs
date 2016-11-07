@@ -1,14 +1,21 @@
-import XMonad -- main
-import XMonad.Hooks.ICCCMFocus  -- for android-studio visual
-import XMonad.Hooks.DynamicLog -- for xmobar
-import XMonad.Actions.SpawnOn(spawnOn) -- auto execute some
-import System.IO (hPutStrLn) -- for dynamiclog
-import qualified Data.Map as M
+import qualified Data.Map                  as M
+import           System.IO                 (hPutStrLn)
+import           XMonad
+import           XMonad.Actions.SpawnOn    (spawnOn)
+import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.FadeWindows
+import           XMonad.Hooks.FadeInactive
+import           XMonad.Hooks.ICCCMFocus
 
 myStartUp = do
     spawnOn "1" "terminator"
 
+
+myFadeHook = composeAll [ opaque ]
+
 myLogHook  = do
+    fadeWindowsLogHook myFadeHook
+    fadeInactiveLogHook 0xffdddddd
     takeTopFocus
     dynamicLog
 --    dynamicLogWithPP $  defaultPP {ppOutput = hPutStrLn h}
@@ -16,14 +23,13 @@ myLogHook  = do
 workspaceName :: [String]
 workspaceName = ["1","2","3","4","5","6","7","8","9"]
 
-cfg = defaultConfig
 
 main = do
-    xmonad  =<< xmobar cfg
-    where
-	    { terminal = "terminator"
-	    , workspaces = workspaceName
-	    , startupHook = myStartUp
-            , logHook =  myLogHook
-	    , borderWidth = 2
-	    }
+    xmonad  =<< xmobar defaultConfig
+              { terminal = "terminator"
+              , workspaces = workspaceName
+              , startupHook = myStartUp
+              , handleEventHook = fadeWindowsEventHook
+              , logHook =  myLogHook
+              , borderWidth = 2
+              }
