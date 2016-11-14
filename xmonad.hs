@@ -11,7 +11,7 @@ myStartUp = do
     spawnOn "1" "terminator"
 
 
-myFadeHook = composeAll [ opaque ]
+myFadeHook = composeAll [ isUnfocused --> transparency 0.2 , transparency 0.4]
 
 myLogHook  = do
     fadeWindowsLogHook myFadeHook
