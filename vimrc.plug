@@ -18,6 +18,7 @@ Plug 'thinca/vim-quickrun'
 Plug 'mattn/sonictemplate-vim'
 Plug 'Shougo/vimproc.vim' 
 Plug 'osyo-manga/vim-reunions' 
+Plug 'let-def/vimbufsync'
 
 " Plug 'aharisu/vise'
 " Plug 'mattn/lisper-vim'
@@ -34,6 +35,9 @@ Plug 'osyo-manga/vim-stargate', {
                         \       'for' : 'cpp'
                         \ }
 
+Plug 'the-lambda-church/coquille', {
+                        \       'for' : [ 'coq' ]
+                        \}
 Plug 'JesseKPhillips/d.vim', {
                         \       'for' : [ 'd' ]
                         \}
@@ -178,9 +182,9 @@ Plug 'smerrill/vcl-vim-plugin',{
 Plug 'jvoorhis/coq.vim', {
                         \   'for' : [ 'coq' ],
                         \ }
-Plug 'eagletmt/coqtop-vim', {
-                        \ 'for' : [ 'coq' ],
-                        \ }
+"Plug 'eagletmt/coqtop-vim', {
+"                        \ 'for' : [ 'coq' ],
+"                        \ }
 "Plug 'vim-scripts/CoqIDE', {
 "                        \ 'for' : [ 'coq' ],
 "                        \ }

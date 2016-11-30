@@ -385,6 +385,7 @@ augroup End
 
 augroup coq_keymaps
     autocmd! 
+    au FileType coq call coquille#CoqideMapping()
     autocmd FileType coq nmap <LocalLeader>s :CoqStart<CR>
 augroup End
 
