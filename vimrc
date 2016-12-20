@@ -264,6 +264,7 @@ set nofoldenable
 syntax on
 set background=dark
 colo rdark
+set maxmempattern=8000
 
 
 let g:tab_seted =0
