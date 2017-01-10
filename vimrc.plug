@@ -150,7 +150,7 @@ Plug 'maksimr/vim-jsbeautify' ,{
                         \       'for' : 'javascript',
                         \}
 
-Plug 'toyamarinyon/vim-swift', {
+Plug 'keith/swift.vim', {
                         \        'for' : 'swift',
                         \ }
 "latex
