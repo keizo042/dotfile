@@ -72,9 +72,9 @@ Plug 'ujihisa/ref-hoogle',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
 
-Plug 'cohama/the-ocamlspot.vim', {
-                        \       'for' : 'ocaml',
-                        \ }
+"Plug 'cohama/the-ocamlspot.vim', {
+"                        \       'for' : 'ocaml',
+"                        \ }
 Plug 'rgrinberg/vim-ocaml', {
                         \       'for' : 'ocaml',
                         \ }
