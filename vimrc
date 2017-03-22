@@ -232,7 +232,6 @@ set ttimeout "command time out
 set ttimeoutlen=500
 set number
 set linebreak
-set autochdir
 set autoread
 
 
