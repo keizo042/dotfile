@@ -45,7 +45,7 @@ alias p=pwd
 alias g=git
 alias ,,='..'
 alias cl=clear
-alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
+#alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias mrbinstall="git clone http://github.com/mruby/mruby.git"
 
 export GOPATH=$HOME/go
