@@ -133,7 +133,10 @@ Plug 'ynkdir/vim-vimlparser', {
 Plug 'leafgarland/typescript-vim',{
                         \       'for' : ['typescript'],
                         \ }
-Plug 'clausreinke/typescript-tools',{
+"Plug 'clausreinke/typescript-tools',{
+"                        \       'for' : ['typescript'],
+"                        \ }
+Plug 'clausreinke/typescript-tools.vim', {
                         \       'for' : ['typescript'],
                         \ }
 "haxe
