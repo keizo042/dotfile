@@ -40,6 +40,7 @@ alias ll='ls -lF'
 
 fi
 
+export PS1='\[[\h: \u@\w]\n\$\] '
 alias dc=cd
 alias p=pwd
 alias g=git
