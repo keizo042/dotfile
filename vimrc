@@ -321,7 +321,7 @@ augroup END
 
 augroup LANGUAGES_SETTING
         autocmd!
-        autocmd! BufNewFile,BufRead *.yml,*.yaml,*.cabal,*.html,*.cc,*.cpp,*.cxx,*.xx,*.tmlp,*.rb,*.hs,*.ml,*.scala call s:Tab_size_define(2)
+        autocmd! BufNewFile,BufRead *.lua,*.yml,*.yaml,*.cabal,*.html,*.cc,*.cpp,*.cxx,*.xx,*.tmlp,*.rb,*.hs,*.ml,*.scala call s:Tab_size_define(2)
         autocmd! BufNewFile,BufRead *.py,*.c,,*.cxx,*.hx,*.d, call s:Tab_size_define(4)
         autocmd! BufNewFile,BufRead *.go call s:Tab_hard_define()
         autocmd! BufNewFile,BufRead *.go nnoremap <C-n> <C-x><C-o>

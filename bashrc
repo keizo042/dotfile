@@ -49,6 +49,22 @@ alias cl=clear
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias mrbinstall="git clone http://github.com/mruby/mruby.git"
 
+
+
+sdc () {
+docker-machine start default
+}
+
+edc () {
+eval "$(docker-machine env $1)"
+}
+
+idc () {
+    sdc 
+    edc
+}
+
+
 export GOPATH=$HOME/go
 export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
 export PATH=$PATH:$HOME/go/bin
