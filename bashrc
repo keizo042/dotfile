@@ -48,6 +48,7 @@ alias ,,='..'
 alias cl=clear
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias mrbinstall="git clone http://github.com/mruby/mruby.git"
+alias vhasktag="hasktags --ignore-close-implementation --ctags"
 
 
 
@@ -96,5 +97,5 @@ export EDITOR=vim
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 if [ -e $HOME/.bashrc.local ]; then
-source $HOME/.bashrc.local
+    source $HOME/.bashrc.local
 fi
