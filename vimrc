@@ -273,7 +273,7 @@ function! s:InstallRustEnv()
 endfunction
 
 function! s:ReadHaskellVimrc() 
-    "source ~/.vim/haskell.vimrc
+    source ~/.vim/haskell.vimrc
 endfunction
 
 "augroups
