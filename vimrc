@@ -12,118 +12,31 @@ source $HOME/.config/dotfile/vimrc.plug
 source $HOME/.config/dotfile/vimrc.tagbar
 source $HOME/.config/dotfile/vimrc.quickrun
 source $HOME/.config/dotfile/vimrc.enc
+source $HOME/.config/dotfile/vimrc.param
+source $HOME/.config/dotfile/vimrc.tab
 if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
-
-
-"set foldmethod=syntax
-
-"plugin env variable
-set rtp+=~/.vim/bundle/vital.vim
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-
-
-"plugin user variable
-let s:Vital = vital#of('vital')
-
 if !exists('loaded_matchit')
       " matchitを有効化
         runtime macros/matchit.vim
 endif
+
+"plugin env variable
+set rtp+=~/.vim/bundle/vital.vim
+let s:Vital = vital#of('vital')
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+
 "watchdogs
 let g:watchdogs_check_BufWritePost_enable = 0
+let g:incsearch#auto_nohlsearch=0
+let g:hpaste_author = 'keizo'
+let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
 call watchdogs#setup(g:quickrun_config)
 
-"incsearch.vim
-let g:incsearch#auto_nohlsearch=0
-
-"golang omni-complete
-
-"haskell
-let g:hpaste_author = 'keizo'
-
-
-"sonictemplate.vim
-let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
-
-"status
-set laststatus=2
-set completeopt=menu,preview,longest
-set showcmd
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [LEN=%L]
-set nowritebackup
-set notitle
-set noswapfile
-set ruler       
-set history=100 "log
-set noerrorbells "unline errorbells
-set ttimeout "command time out
-set ttimeoutlen=500
-set number
-set linebreak
-set autoread
-set tags=tags;/,codex.tags;/
 
 
 
-"set cursorline
-"set cursorcolumn
-set wildmenu
-set wildmode=longest:full,full
-
-
-"tab
-set smartindent
-set autoindent
-setlocal cindent
-set expandtab
-setlocal formatoptions-=r
-setlocal formatoptions-=o
-
-
-
-"search
-set wrapscan
-set wrap
-set wrapmargin=0
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set showmatch
-set ambiwidth=double "unicode encoding setting
-set browsedir=buffer
-set nofoldenable
-"set complete
-
-"syntax
-syntax on
-set background=dark
-colo rdark
-set maxmempattern=8000
-
-
-let g:tab_seted =0
-function! s:TabSizeDefine(tab_size)
-        let g:tab_seted=1
-        if a:tab_size != 0
-                let &l:shiftwidth=a:tab_size
-                let &l:softtabstop=a:tab_size
-        else
-                let &l:shiftwidth=4
-                let &l:softtabstop=4
-        end
-endfunction
-
-function! s:TabHardDefine()
-        let g:tab_seted=1
-        setlocal noexpandtab
-endfunction
-
-if g:tab_seted !=1
-        call s:TabSizeDefine(2)
-endif
 
 function! s:InstallRustEnv()
     if !isdirectory(expand("~/bin/racer"))
@@ -156,17 +69,9 @@ augroup ftpsetting
         autocmd! BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=MARKDOWN
         autocmd! BufNewfile,BufRead *.gembox setfiletype RUBY
         autocmd! BufNewFile,BufRead *.hx setfiletype HAXE
-augroup END
-
-augroup LANGUAGES_SETTING
-        autocmd!
-        autocmd! BufNewFile,BufRead *.lua,*.yml,*.yaml,*.cabal,*.html,*.cc,*.cpp,*.cxx,*.xx,*.tmlp,*.rb,*.hs,*.ml,*.scala call s:TabSizeDefine(2)
-        autocmd! BufNewFile,BufRead *.py,*.c,,*.cxx,*.hx,*.d, call s:TabSizeDefine(4)
-        autocmd! BufNewFile,BufRead *.go call s:TabHardDefine()
-        autocmd! BufNewFile,BufRead *.go nnoremap <C-n> <C-x><C-o>
-        autocmd! BufNewFile,BufRead *.go set noexpandtab
         autocmd! FileType erlang setlocal makeprg=erlc\ %
         autocmd! FileType erlang setlocal errorformat=%f:%l:\ %m
+        autocmd! BufNewFile,BufRead *.go nnoremap <C-n> <C-x><C-o>
 augroup END
 
 augroup BinaryXXD
