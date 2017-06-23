@@ -68,7 +68,7 @@ Plug 'dag/vim2hs', {
                         \   'for' : [ 'haskell' ] ,
                         \ }
 
-Plug 'ujihisa/ref-hoogle',{
+Plug 'Twinside/vim-hoogle',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
 
