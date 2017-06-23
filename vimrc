@@ -203,6 +203,8 @@ set ttimeoutlen=500
 set number
 set linebreak
 set autoread
+set tags=tags;/,codex.tags;/
+
 
 
 "set cursorline
@@ -243,7 +245,7 @@ set maxmempattern=8000
 
 
 let g:tab_seted =0
-function! s:Tab_size_define(tab_size)
+function! s:TabSizeDefine(tab_size)
         let g:tab_seted=1
         if a:tab_size != 0
                 let &l:shiftwidth=a:tab_size
@@ -254,12 +256,13 @@ function! s:Tab_size_define(tab_size)
         end
 endfunction
 
-function! s:Tab_hard_define()
+function! s:TabHardDefine()
         let g:tab_seted=1
         setlocal noexpandtab
 endfunction
+
 if g:tab_seted !=1
-        call s:Tab_size_define(4)
+        call s:TabSizeDefine(2)
 endif
 
 function! s:InstallRustEnv()
@@ -267,9 +270,11 @@ function! s:InstallRustEnv()
     system("git clone https://github.com/phildawes/racer.git ~/bin/racer")
     system("cd ~/bin/racer;cargo build --release")
     endif
-    
 endfunction
 
+function! s:ReadHaskellVimrc() 
+    "source ~/.vim/haskell.vimrc
+endfunction
 
 "augroups
 "============================
