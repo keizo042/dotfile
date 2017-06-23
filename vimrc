@@ -9,21 +9,20 @@ if has('vim_starting')
   end
 endif
 source $HOME/.config/dotfile/vimrc.plug
+source $HOME/.config/dotfile/vimrc.tagbar
+source $HOME/.config/dotfile/vimrc.quickrun
+source $HOME/.config/dotfile/vimrc.enc
+if filereadable($HOME . "/.vimrc.local")
+        source $HOME/.vimrc.local
+endif
 
-"curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
 
-"env varlable
 "set foldmethod=syntax
 
 "plugin env variable
 set rtp+=~/.vim/bundle/vital.vim
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute 'set rtp+=' . g:opamshare . '/merlin/vim'
-execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
-
-let g:calendar_frame = 'default'
 
 "plugin user variable
 let s:Vital = vital#of('vital')
@@ -32,33 +31,6 @@ if !exists('loaded_matchit')
       " matchitを有効化
         runtime macros/matchit.vim
 endif
-
-let g:quickrun_config = {
-                        \   "_" : {
-                        \       "runner" : "vimproc",
-                        \       "runner/vimproc/updatetime" : 40,
-                        \       "outputter/buffer/name" : "execute" ,
-                        \       "outputter/buffer/info" : 0,
-                        \       "outputter/buffer/close_on_empty" : 1
-                        \   },
-                        \ 'watchdogs_checker/mruby' : {
-                        \       'exec' : '%c %o --verbose %s:p'
-                        \   },
-                        \
-                        \ "watchdogs_checker/dmd" : {
-                        \ "exec" : " %c %o -c -o- %s:p"
-                        \   },
-                        \ "watchdogs_checker/ocamlc" : {
-                        \ "exec" : " %c %o  %s:p"
-                        \   },
-                        \}
-
-let g:quickrun_config.haskell = {
-                        \ 'commnad' : 'stack',
-                        \ 'exec' :  'stack exec runghc %s' , 
-                        \}
-
-
 "watchdogs
 let g:watchdogs_check_BufWritePost_enable = 0
 call watchdogs#setup(g:quickrun_config)
@@ -70,122 +42,10 @@ let g:incsearch#auto_nohlsearch=0
 
 "haskell
 let g:hpaste_author = 'keizo'
-let g:haskell_conceal = 0
-let g:haskell_conceal_enumerations = 0
-let g:haskell_conceal_wide = 0
 
-"if executable("stack")
-"    let s:haskell_bins = ["ghc-mod", "endihasktags", "codex","hscope", "pointfree", "pointful", "hoogle", "stylish-haskell" ]
-"    for bin in s:haskell_bins
-"        if !executable(bin)
-"            call system("stack install " + bin)
-"        endif
-"    endfor
-"endif
 
 "sonictemplate.vim
 let g:sonictemplate_vim_template_dir=expand("~/.vim/templates")
-
-"golang tagbar
-let g:tagbar_type_go = {
-                        \ 'ctagstype' : 'go',
-                        \ 'kinds'     : [
-                        \ 'p:package',
-                        \ 'i:imports:1',
-                        \ 'c:constants',
-                        \ 'v:variables',
-                        \ 't:types',
-                        \ 'n:interfaces',
-                        \ 'w:fields',
-                        \ 'e:embedded',
-                        \ 'm:methods',
-                        \ 'r:constructor',
-                        \ 'f:functions'
-                        \ ],
-                        \ 'sro' : '.',
-                        \ 'kind2scope' : {
-                        \ 't' : 'ctype',
-                        \ 'n' : 'ntype'
-                        \ },
-                        \ 'scope2kind' : {
-                        \ 'ctype' : 't',
-                        \ 'ntype' : 'n'
-                        \ },
-                        \ 'ctagsbin'  : 'gotags',
-                        \ 'ctagsargs' : '-sort -silent'
-                        \ }
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-    \ }
-"nim tabgar
-let g:tagbar_type_nim = {
-      \ 'ctagstype' : 'nim',
-      \ 'kinds' : [
-      \   'h:Headline',
-      \   't:class',
-      \   't:enum',
-      \   't:tuple',
-      \   't:subrange',
-      \   't:proctype',
-      \   'f:procedure',
-      \   'f:method',
-      \   'o:operator',
-      \   't:template',
-      \   'm:macro',
-      \ ],
-      \}
-
-
-"=My default==================================================
-if filereadable($HOME . "/.vimrc.local")
-        source $HOME/.vimrc.local
-endif
-
-
-"different OS env settings
-if has("win32") || has("win64")
-        set termencoding=cp932
-        "    set fileencodings=ucs-bom,iso-2022-jp,cp932,sjis,euc-jp,utf-8
-
-
-elseif has("mac")
-        set fileencoding=utf-8
-        set fileencodings=utf-8,sjis,euc-jp,cp932
-        set termencoding=utf-8
-
-else
-        set fileencoding=utf-8
-        set fileencodings=utf-8,sjis,euc-jp,cp932
-        set termencoding=utf-8
-endif
 
 "status
 set laststatus=2
@@ -275,6 +135,10 @@ endfunction
 function! s:ReadHaskellVimrc() 
     source ~/.vim/haskell.vimrc
 endfunction
+
+if isdirectory(expand("./.stack-work"))
+  call s:ReadHaskellVimrc()
+endif
 
 "augroups
 "============================
@@ -396,8 +260,12 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+"map <Leader>lh :call s:ReadHaskellVimrc()<CR>
 
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute 'set rtp+=' . g:opamshare . '/merlin/vim'
+execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
 let s:opam_share_dir = system("opam config var share")
 let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
 
