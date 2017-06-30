@@ -1,8 +1,8 @@
 " HVN paths {{{
 " stack bin path symlink
-let hvn_stack_bin = expand(resolve(hvn_config_dir . "/.stack-bin"))
+"let hvn_stack_bin = expand(resolve(hvn_config_dir . "/.stack-bin"))
 " Find custom built hasktags, codex etc
-let $PATH = expand(hvn_stack_bin) . ':' . $PATH
+"let $PATH = expand(hvn_stack_bin) . ':' . $PATH
 
 " }}}
 

@@ -14,7 +14,8 @@ source $HOME/.vim/vimrc/vimrc.quickrun
 source $HOME/.vim/vimrc/vimrc.enc
 source $HOME/.vim/vimrc/vimrc.param
 source $HOME/.vim/vimrc/vimrc.tab
-source $HOME/.vim/vimrc/vimrc.opam
+
+source $HOME/.vim/vimrc/opam.vimrc
 if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
@@ -52,7 +53,10 @@ function! s:InstallRustEnv()
 endfunction
 
 function! s:ReadHaskellVimrc() 
-    source ~/.vim/vimrc/haskell.vimrc
+  let path ="~/.vim/vimrc/hs.vimrc"
+  if filereadable(path)
+    eval("source " . path)
+  endif
 endfunction
 
 if isdirectory(expand("./.stack-work"))

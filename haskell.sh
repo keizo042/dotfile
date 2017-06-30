@@ -1,2 +1,2 @@
 #!/bin/bash 
-stack install ghc-mod hasktags codex hscope pointfree pointful hoogle stylish-haskell
+stack install ghc-mod hasktags codex hscope pointfree pointful hoogle stylish-haskell hindent hdevtools
