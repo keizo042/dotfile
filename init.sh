@@ -21,6 +21,10 @@ if [ ! -L $HOME/.vim/templates ]; then
     ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim
 fi
 
+if [ ! -L $HOME/.vim/vimrc ]; then
+    ln -s $CONFIG_DIR/dotfile/vim/vimrc $HOME/.vim
+fi
+
 if [ ! -L $HOME/.emacs.d ]; then
     ln -s $CONFIG_DIR/dotfile/emacs.d $HOME/.emacs.d
 fi

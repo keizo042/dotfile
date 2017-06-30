@@ -8,13 +8,13 @@ if has('vim_starting')
     call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
   end
 endif
-source $HOME/.config/dotfile/vimrc.plug
-source $HOME/.config/dotfile/vimrc.tagbar
-source $HOME/.config/dotfile/vimrc.quickrun
-source $HOME/.config/dotfile/vimrc.enc
-source $HOME/.config/dotfile/vimrc.param
-source $HOME/.config/dotfile/vimrc.tab
-source $HOME/.config/dotfile/vimrc.opam
+source $HOME/.vim/vimrc/vimrc.plug
+source $HOME/.vim/vimrc/vimrc.tagbar
+source $HOME/.vim/vimrc/vimrc.quickrun
+source $HOME/.vim/vimrc/vimrc.enc
+source $HOME/.vim/vimrc/vimrc.param
+source $HOME/.vim/vimrc/vimrc.tab
+source $HOME/.vim/vimrc/vimrc.opam
 if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
@@ -52,7 +52,7 @@ function! s:InstallRustEnv()
 endfunction
 
 function! s:ReadHaskellVimrc() 
-    source ~/.vim/haskell.vimrc
+    source ~/.vim/vimrc/haskell.vimrc
 endfunction
 
 if isdirectory(expand("./.stack-work"))
