@@ -24,8 +24,12 @@ fi
 if [ ! -L $HOME/.vim/vimrc ]; then
     ln -s $CONFIG_DIR/dotfile/vim/vimrc $HOME/.vim
 fi
+if [ ! -L $HOME/.vim/bin ]; then
+    ln -s $CONFIG_DIR/dotfile/vim/bin $HOME/.vim
+fi
 
-if [ ! -L $HOME/.emacs.d ]; then
+
+if [ ! -e $HOME/.emacs.d ]; then
     ln -s $CONFIG_DIR/dotfile/emacs.d $HOME/.emacs.d
 fi
 

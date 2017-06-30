@@ -29,7 +29,7 @@ set rtp+=~/.vim/bundle/vital.vim
 let s:Vital = vital#of('vital')
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 
-"watchdogs
+"config
 let g:watchdogs_check_BufWritePost_enable = 0
 let g:incsearch#auto_nohlsearch=0
 let g:hpaste_author = 'keizo'
