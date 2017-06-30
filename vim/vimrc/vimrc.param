@@ -23,7 +23,8 @@ set tags=tags;/,codex.tags;/
 set wildmenu
 set wildmode=longest:full,full
 
-
+let mapleader = ","
+noremap \ ,
 "tab
 set smartindent
 set autoindent

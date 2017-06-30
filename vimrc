@@ -54,13 +54,13 @@ function! s:InstallRustEnv()
 endfunction
 
 function! s:ReadHaskellVimrc() 
-  let path ="~/.vim/vimrc/hs.vimrc"
+  let path = expand("~/.vim/vimrc/hs.vimrc")
   if filereadable(path)
-    eval("source " . path)
+    source $HOME/.vim/vimrc/hs.vimrc
   endif
 endfunction
 
-if isdirectory(expand("./.stack-work"))
+if isdirectory(expand("./.stack-work")) || (&ft == "HASKELL")
   call s:ReadHaskellVimrc()
 endif
 
