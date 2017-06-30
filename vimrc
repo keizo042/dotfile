@@ -19,6 +19,7 @@ source $HOME/.vim/vimrc/opam.vimrc
 if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
+let $PATH = expand("~/.vim/bin") . ':' . $PATH
 if !exists('loaded_matchit')
       " matchitを有効化
         runtime macros/matchit.vim
