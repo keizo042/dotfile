@@ -58,9 +58,12 @@ Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
 
 
 "haskell
-Plug 'itchyny/vim-haskell-indent',{
+Plug 'neomake/neomake',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
+"Plug 'itchyny/vim-haskell-indent',{
+"                        \   'for' : [ 'haskell' ] ,
+"                        \ }
 Plug 'eagletmt/ghcmod-vim',{
                         \   'for' : [ 'haskell' ] ,
                         \ }

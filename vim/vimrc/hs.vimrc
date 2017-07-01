@@ -10,6 +10,7 @@ endfunc
 
 
 " Pretty unicode haskell symbols
+let g:haskell_conceal = 0
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_enumerations = 1
 let hscoptions="𝐒𝐓𝐄𝐌xRtB𝔻w"
@@ -158,6 +159,8 @@ autocmd BufRead *
 
 " Haskell Lint
 nmap <silent> <leader>hl :Neomake hlint<CR>
+
+nmap <leader>hmk :!stack build<CR>
 
 " Options for Haskell Syntax Check
 let g:neomake_haskell_ghc_mod_args = '-g-Wall'

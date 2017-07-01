@@ -19,12 +19,12 @@ source $HOME/.vim/vimrc/opam.vimrc
 if filereadable($HOME . "/.vimrc.local")
         source $HOME/.vimrc.local
 endif
-let $PATH = expand("~/.vim/bin") . ':' . $PATH
 if !exists('loaded_matchit')
       " matchitを有効化
         runtime macros/matchit.vim
 endif
 
+let $PATH = expand("~/.vim/bin") . ':' . $PATH
 "plugin env variable
 set rtp+=~/.vim/bundle/vital.vim
 let s:Vital = vital#of('vital')
@@ -55,12 +55,10 @@ endfunction
 
 function! s:ReadHaskellVimrc() 
   let path = expand("~/.vim/vimrc/hs.vimrc")
-  if filereadable(path)
-    source $HOME/.vim/vimrc/hs.vimrc
-  endif
+  source ~/.vim/vimrc/hs.vimrc
 endfunction
 
-if isdirectory(expand("./.stack-work")) || (&ft == "HASKELL")
+if isdirectory(expand("./.stack-work")) || filereadable(expand("./Setup.hs")) || filereadable(expand("./stack.yaml"))|| (&ft == "HASKELL")
   call s:ReadHaskellVimrc()
 endif
 
