@@ -58,6 +58,9 @@ Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
 
 
 "haskell
+Plug 'nbouscal/vim-stylish-haskell',{
+                        \   'for' : [ 'haskell' ] ,
+                        \ }
 Plug 'neomake/neomake',{
                         \   'for' : [ 'haskell' ] ,
                         \ }

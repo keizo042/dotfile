@@ -160,7 +160,7 @@ autocmd BufRead *
 " Haskell Lint
 nmap <silent> <leader>hl :Neomake hlint<CR>
 
-nmap <leader>hmk :!stack build<CR>
+nmap <leader>hb :!stack build<CR>
 
 " Options for Haskell Syntax Check
 let g:neomake_haskell_ghc_mod_args = '-g-Wall'

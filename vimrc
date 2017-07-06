@@ -113,20 +113,12 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 
-function s:StylishHaskell()
-    if executable("stylish-haskell")
-        %!stylish-haskell
-    endif
-endfunction
-
-
 augroup HaskellKeymap
     autocmd!
     autocmd FileType haskell nmap <silent> <C-n>  :GhcModType<CR>
     autocmd FileType haskell nmap <silent> <C-x> :GhcModTypeInsert<CR>
 "    autocmd BufWritePost *.hs GhcModCheck
     autocmd FileType haskell command! W GhcModCheck
-    autocmd FileType haskell command! Stylish call s:StylishHaskell()<CR>
 augroup End
 
 augroup CoqKeyMap
