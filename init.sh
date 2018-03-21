@@ -37,6 +37,10 @@ if [ ! -L $HOME/.emacs ]; then
     ln -s $CONFIG_DIR/dotfile/emacs $HOME/.emacs
 fi
 
+if [ ! -L $HOME/.ctags ]; then
+  ln -s $CONFIG_DIR/dotfile/ctags $HOME/.ctags
+fi
+
 if [ -z "$(git config --get core.excludesfile)" ]; then
 git config --global core.excludesfile $CONFIG_DIR/gitignore 
 git config --global diff.compactionHeuristic true
