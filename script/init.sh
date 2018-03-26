@@ -6,7 +6,7 @@ if [ ! -e $CONFIG_DIR ]; then
     mkdir $CONFIG_DIR
 fi
 if [ ! -e $HOME/.bashrc ]; then
-ln -s $CONFIG_DIR/dotfile/bash $HOME/.bashrc
+ln -s $CONFIG_DIR/dotfile/bashrc $HOME/.bashrc
 fi
 
 if [ ! -e $HOME/.vimrc ]; then
