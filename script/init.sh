@@ -44,6 +44,8 @@ fi
 if [ -z "$(git config --get core.excludesfile)" ]; then
 git config --global core.excludesfile $CONFIG_DIR/gitignore 
 git config --global diff.compactionHeuristic true
+git config --global user.email "keizo042dev@gmail.com"
+git config --global user.name "Koichi Nakanishi"
 echo "DS_Store" >> $CONFIG_DIR/gitignore
 echo "*.o" >> $CONFIG_DIR/gitignore
 echo "*.hi" >> $CONFIG_DIR/gitignore

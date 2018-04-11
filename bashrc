@@ -44,6 +44,7 @@ export PS1='[\u: \h@\w]\n\$ '
 alias dc=cd
 alias p=pwd
 alias g=git
+alias cdg='eval "ghq look $(ghq list | peco)"'
 alias ,,='..'
 alias cl=clear
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
