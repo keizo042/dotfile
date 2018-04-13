@@ -44,14 +44,22 @@ export PS1='[\u: \h@\w]\n\$ '
 alias dc=cd
 alias p=pwd
 alias g=git
-alias cdg='eval "ghq look $(ghq list | peco)"'
 alias ,,='..'
 alias cl=clear
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias mrbinstall="git clone http://github.com/mruby/mruby.git"
 alias vhasktag="hasktags --ignore-close-implementation --ctags"
+bind -x '"\C-]": cdg'
 
-
+function cdg() {
+  local selected_file=$(ghq list --full-path | peco --query "$LBUFFER")
+  if [ -n "$selected_file" ]; then
+    if [ -t 1 ]; then
+      echo ${selected_file}
+      cd ${selected_file}
+    fi
+  fi
+}
 
 sdc () {
 docker-machine start default

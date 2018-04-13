@@ -46,6 +46,12 @@ git config --global core.excludesfile $CONFIG_DIR/gitignore
 git config --global diff.compactionHeuristic true
 git config --global user.email "keizo042dev@gmail.com"
 git config --global user.name "Koichi Nakanishi"
+if [ ! -e $HOME ]; then
+git config --global ghq.root $HOME/src
+fi
+if [ ! -e $GOPATH ]; then
+git config --global ghq.root $GOPATH/src
+fi
 echo "DS_Store" >> $CONFIG_DIR/gitignore
 echo "*.o" >> $CONFIG_DIR/gitignore
 echo "*.hi" >> $CONFIG_DIR/gitignore
