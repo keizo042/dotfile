@@ -29,6 +29,7 @@ let $PATH = expand("~/.vim/bin") . ':' . $PATH
 set rtp+=~/.vim/bundle/vital.vim
 let s:Vital = vital#of('vital')
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+let g:go_fmt_command = "goimports"
 
 "config
 let g:watchdogs_check_BufWritePost_enable = 0
