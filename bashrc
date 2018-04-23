@@ -40,7 +40,7 @@ alias ll='ls -lF'
 
 fi
 
-export PS1='[\u: \h@\w]\n\$ '
+export PS1='\h@\w $(__git_ps1 "(%s)")\n[\u]\n\$ '
 alias dc=cd
 alias p=pwd
 alias g=git
@@ -55,7 +55,6 @@ function cdg() {
   local selected_file=$(ghq list --full-path | peco --query "$LBUFFER")
   if [ -n "$selected_file" ]; then
     if [ -t 1 ]; then
-      echo ${selected_file}
       cd ${selected_file}
     fi
   fi
@@ -74,6 +73,12 @@ idc () {
     edc
 }
 
+alias xcd="xargs cd"
+alias xvi="xargs sh -c 'vim $* < /dev/tty'"
+function fp() {
+  find . | peco
+}
+bind -x '"\C-p" : fp'
 
 export GOPATH=$HOME/go
 export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
