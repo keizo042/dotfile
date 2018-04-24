@@ -73,10 +73,12 @@ idc () {
     edc
 }
 
-alias xcd="xargs cd"
-alias xvi="xargs sh -c 'vim $* < /dev/tty'"
+function xvi() {
+vim -p "$(cat -)" $* < /dev/tty
+}
+
 function fp() {
-  find . | peco
+  find $(pwd) | peco
 }
 bind -x '"\C-p" : fp'
 
