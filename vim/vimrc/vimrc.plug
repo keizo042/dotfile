@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
+Plug 'soramugi/auto-ctags.vim'
 Plug 'vim-scripts/rdark'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
