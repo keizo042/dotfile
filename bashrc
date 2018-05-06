@@ -39,8 +39,15 @@ alias la='ls -aF'
 alias ll='ls -lF'
 
 fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
 export PS1='\h@\w $(__git_ps1 "(%s)")\n[\u]\n\$ '
+else
+export PS1='\h@\w \n[\u]\n\$ '
+fi
 alias dc=cd
 alias p=pwd
 alias g=git

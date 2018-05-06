@@ -1,2 +1,9 @@
 tags
+tag
+TAGS
+TAG
 *.o
+*.hi
+*.a
+.cscope
+.DS_Store 
