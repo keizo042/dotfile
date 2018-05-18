@@ -29,7 +29,10 @@ let $PATH = expand("~/.vim/bin") . ':' . $PATH
 set rtp+=~/.vim/bundle/vital.vim
 let s:Vital = vital#of('vital')
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+let g:go_metalinter_enabled = ['golint', 'errcheck', 'staticcheck', 'gosimple']
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+let g:terraform_fmt_on_save = 0
 
 "config
 let g:watchdogs_check_BufWritePost_enable = 0
@@ -72,13 +75,19 @@ augroup ftpsetting
         autocmd! BufNewFile,BufRead *.scala setfiletype scala 
         autocmd! BufNewFile,BufRead *vim* setfiletype VIM 
         autocmd! BufNewFile,BufRead *.clj setfiletype clojure
-        autocmd! BufNewFile,BufRead *.go setfiletype go 
         autocmd! BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=MARKDOWN
         autocmd! BufNewfile,BufRead *.gembox setfiletype RUBY
         autocmd! BufNewFile,BufRead *.hx setfiletype HAXE
         autocmd! FileType erlang setlocal makeprg=erlc\ %
         autocmd! FileType erlang setlocal errorformat=%f:%l:\ %m
         autocmd! BufNewFile,BufRead *.go nnoremap <C-n> <C-x><C-o>
+augroup END
+
+augroup GoSettings
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 
 augroup BinaryXXD

@@ -7,6 +7,12 @@
 
 ##alias ls='ls --color=auto'
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:~/bin/go_appengine
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/.opam/system/bin
 EDITOR=vim
 
 #
@@ -37,6 +43,18 @@ alias ls='ls -F'
 alias sl='ls -F'
 alias la='ls -aF'
 alias ll='ls -lF'
+alias dc=cd
+alias p=pwd
+alias g=git
+alias cl=clear
+alias ,,='..'
+alias mrbinstall="git clone http://github.com/mruby/mruby.git"
+alias vhasktag="hasktags --ignore-close-implementation --ctags"
+bind -x '"\C-]": cdg'
+export GOPATH=$HOME/go
+export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
+export CLOUDSDK_PYTHON=/usr/bin/python2
+#eval "$(hub alias -s)"
 
 fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -48,15 +66,7 @@ export PS1='\h@\w $(__git_ps1 "(%s)")\n[\u]\n\$ '
 else
 export PS1='\h@\w \n[\u]\n\$ '
 fi
-alias dc=cd
-alias p=pwd
-alias g=git
-alias ,,='..'
-alias cl=clear
-#alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
-alias mrbinstall="git clone http://github.com/mruby/mruby.git"
-alias vhasktag="hasktags --ignore-close-implementation --ctags"
-bind -x '"\C-]": cdg'
+
 
 function cdg() {
   local selected_file=$(ghq list --full-path | peco --query "$LBUFFER")
@@ -89,20 +99,9 @@ function fp() {
 }
 bind -x '"\C-p" : fp'
 
-export GOPATH=$HOME/go
-export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/.cargo/bin
-export CLOUDSDK_PYTHON=/usr/bin/python2
-export PATH=$PATH:~/bin/go_appengine
-#eval "$(hub alias -s)"
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:$HOME/.opam/system/bin
 
 
 
-export EDITOR=vim
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '$HOME/bin/google-cloud-sdk/path.bash.inc'

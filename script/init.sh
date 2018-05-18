@@ -46,13 +46,17 @@ if [ -z "$(git config --get core.excludesfile)" ]; then
   git config --global diff.compactionHeuristic true
   git config --global user.email "keizo042dev@gmail.com"
   git config --global user.name "Koichi Nakanishi"
-if [ ! -e "$HOME/misc/src" ]; then
-  mkdir -p $HOME/misc/src
-  git config --global ghq.root $HOME/misc/src
+  if [ ! -e "$HOME/misc/src" ]; then
+    mkdir -p $HOME/misc/src
+    git config --global ghq.root $HOME/misc/src
+  fi
+  if [ ! -e $GOPATH ]; then
+    git config --global ghq.root $GOPATH/src
+  fi
 fi
-if [ ! -e $GOPATH ]; then
-  git config --global ghq.root $GOPATH/src
-fi
+
+if [ -x go ]; then
+  go get github.com/alecthomas/gometalinter
 fi
 
 exit 1

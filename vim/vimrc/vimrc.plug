@@ -5,6 +5,9 @@ Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
 Plug 'soramugi/auto-ctags.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'chase/vim-ansible-yaml'
+Plug 'hashivim/vim-terraform'
 Plug 'vim-scripts/rdark'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -50,7 +53,7 @@ Plug 'osyo-manga/vim-marching', {
 Plug 'osyo-manga/shabadou.vim'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'rodjek/vim-puppet'
-Plug 'fatih/vim-go', { 'for' : [ 'go' ] }
+Plug 'fatih/vim-go', { 'for' : [ 'go' ] , 'do': ':GoInstallBinaries'}
 Plug 'rust-lang/rust.vim', { 'for' :  'rust' }
 Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
 Plug 'slim-template/vim-slim', {
