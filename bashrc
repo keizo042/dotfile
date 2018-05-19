@@ -56,6 +56,7 @@ alias cl=clear
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias mrbinstall="git clone http://github.com/mruby/mruby.git"
 alias vhasktag="hasktags --ignore-close-implementation --ctags"
+alias v=vim
 bind -x '"\C-]": cdg'
 
 function cdg() {
@@ -81,8 +82,12 @@ idc () {
     edc "$@"
 }
 
+function vc() {
+  vim -p "$(ls -a | peco)"
+}
+
 function xvi() {
-vim -p "$(cat -)" "$@" < /dev/tty
+  vim -p "$(cat -)" "$@" < /dev/tty
 }
 
 function fp() {
@@ -112,9 +117,10 @@ function mkrepo {
     REPO_AUTHOR=$2
     REPO_NAME=$3
   else
-    printf "usage: [hostname] [org/author name] repository" 1>&2
-    printf "hostname\tupload hostname (default: %s)" "$DEFAULT_HOST" 1>&2
-    printf "org/author name\torgnization author name (default: %s)" "$DEFAULT_AUTHOR" 1>&2
+    printf "usage: [hostname] [org/author name] repository\n" 1>&2
+    printf "\n" 1>&2
+    printf "hostname\tupload hostname (default: %s)\n" "$DEFAULT_HOST" 1>&2
+    printf "org/author name\torgnization author name (default: %s)\n" "$DEFAULT_AUTHOR" 1>&2
     printf "repository\trepository name" 1>&2
     return
   fi
