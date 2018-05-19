@@ -136,6 +136,14 @@ function mkrepo {
   cd "${CUR_DIR}" || return
 }
 
+function initrepo() {
+  FILES="README.md LICENSE .gitignore"
+  for f in $FILES ; do
+    touch "$f" || return
+  done
+}
+
+
 export GOPATH=$HOME/go
 export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
 export PATH=$PATH:$HOME/go/bin
