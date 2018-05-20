@@ -5,20 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-##alias ls='ls --color=auto'
-export PATH=$PATH:~/.local/bin
 EDITOR=vim
-
-#
-
-case "$TERM" in
-    linux*)
-#        fbterm
-
-        ;;
-    *)
-        ;;
-esac
+alias dc=cd
+alias p=pwd
+alias g=git
+alias ,,='..'
+alias cl=clear
+#alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
+alias vhasktag="hasktags --ignore-close-implementation --ctags"
+alias v=vim
 if [[ "$(uname)" == "Linux" ]]; then
 
 alias l='ls -F --color=auto'
@@ -26,9 +21,7 @@ alias ls='ls -F --color=auto'
 alias sl='ls -F --color=auto'
 alias la='ls -aF --color=auto'
 alias ll='ls -lF --color=auto'
-alias x11=startx
 alias xbset='xbacklight -set'
-alias pac=pacman
 
 else
 
@@ -44,20 +37,10 @@ if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 fi
 
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-export PS1='\h@\w $(__git_ps1 "(%s)")\n[\u]\n\$ '
+  export PS1='\h@\w $(__git_ps1 "(%s)")\n[\u]\n\$ '
 else
-export PS1='\h@\w \n[\u]\n\$ '
+  export PS1='\h@\w \n[\u]\n\$ '
 fi
-alias dc=cd
-alias p=pwd
-alias g=git
-alias ,,='..'
-alias cl=clear
-#alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
-alias mrbinstall="git clone http://github.com/mruby/mruby.git"
-alias vhasktag="hasktags --ignore-close-implementation --ctags"
-alias v=vim
-bind -x '"\C-]": cdg'
 
 function cdg() {
   local selected_file=""
@@ -93,7 +76,6 @@ function xvi() {
 function fp() {
   find "$(pwd)" | peco
 }
-bind -x '"\C-p" : fp'
 
 function mkrepo {
   local DEFAULT_HOST="github.com"
@@ -144,20 +126,17 @@ function initrepo() {
 }
 
 
-export GOPATH=$HOME/go
-export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
+export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export CLOUDSDK_PYTHON=/usr/bin/python2
 export PATH=$PATH:~/bin/go_appengine
-#eval "$(hub alias -s)"
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/.opam/system/bin
-
-
-
-export EDITOR=vim
+export GOPATH=$HOME/go
+export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
+export GOPATH=$GOPATH:$HOME/misc
+export CLOUDSDK_PYTHON=/usr/bin/python2
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '$HOME/bin/google-cloud-sdk/path.bash.inc'
@@ -173,6 +152,9 @@ export EDITOR=vim
 #sudo chown root:root /usr/local/sbin/chrome-devel-sandbox
 #sudo chmod 4755 /usr/local/sbin/chrome-devel-sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+
+bind -x '"\C-p" : fp'
+bind -x '"\C-]": cdg'
 
 if [ -e "$HOME/.bashrc.local" ]; then
     source "$HOME/.bashrc.local"
