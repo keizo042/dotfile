@@ -7,3 +7,4 @@ TAG
 *.a
 .cscope
 .DS_Store 
+__tmp
