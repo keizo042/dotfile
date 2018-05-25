@@ -7,9 +7,14 @@
 
 export PATH=$PATH:$HOME/.opam/system/bin
 EDITOR=vim
+alias b=bkmark
+alias br='hub browse'
 alias dc=cd
 alias p=pwd
 alias g=git
+alias gg='ghq get'
+alias gls='git ls-files'
+alias gcheck="git checkout"
 alias ,,='..'
 alias cl=clear
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
@@ -104,7 +109,7 @@ function mkrepo {
     printf "\n" 1>&2
     printf "hostname\tupload hostname (default: %s)\n" "$DEFAULT_HOST" 1>&2
     printf "org/author name\torgnization author name (default: %s)\n" "$DEFAULT_AUTHOR" 1>&2
-    printf "repository\trepository name" 1>&2
+    printf "repository\trepository name\n" 1>&2
     return
   fi
   REPO="${GHQ_ROOT}/${REPO_HOST}/${REPO_AUTHOR}/${REPO_NAME}"
@@ -124,6 +129,39 @@ function initrepo() {
   for f in $FILES ; do
     touch "$f" || return
   done
+}
+
+function rmrepo() {
+  local DEFAULT_HOST="github.com"
+  local DEFAULT_AUTHOR="keizo042"
+  local REPO_HOST=""
+  local REPO_AUTHOR=""
+  local REPO_NAME=""
+  local GHQ_ROOT=$HOME/misc/src
+  local REPO=""
+  local CUR_DIR=""
+  if [ "1" -eq "$#" ]; then
+    REPO_HOST=$DEFAULT_HOST
+    REPO_AUTHOR=$DEFAULT_AUTHOR
+    REPO_NAME=$1
+  elif [ "2" -eq "$#" ]; then
+    REPO_HOST=$DEFAULT_HOST
+    REPO_AUTHOR=$1
+    REPO_NAME=$2
+  elif [ "3" -eq "$#" ]; then
+    REPO_HOST=$1
+    REPO_AUTHOR=$2
+    REPO_NAME=$3
+  else
+    printf "usage: [hostname] [org/author name] repository\n" 1>&2
+    printf "\n" 1>&2
+    printf "hostname\tupload hostname (default: %s)\n" "$DEFAULT_HOST" 1>&2
+    printf "org/author name\torgnization author name (default: %s)\n" "$DEFAULT_AUTHOR" 1>&2
+    printf "repository\trepository name\n" 1>&2
+    return
+  fi
+  REPO="${GHQ_ROOT}/${REPO_HOST}/${REPO_AUTHOR}/${REPO_NAME}"
+  rm "$REPO"
 }
 
 

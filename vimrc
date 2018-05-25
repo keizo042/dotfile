@@ -29,10 +29,11 @@ let $PATH = expand("~/.vim/bin") . ':' . $PATH
 set rtp+=~/.vim/bundle/vital.vim
 let s:Vital = vital#of('vital')
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+let g:go_metalinter_autosave = 1
 let g:go_metalinter_enabled = ['golint', 'errcheck', 'staticcheck', 'gosimple']
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave = 1
 let g:terraform_fmt_on_save = 0
+let g:go_metalinter_command="--min-confidence=1.0"
 
 "config
 let g:watchdogs_check_BufWritePost_enable = 0

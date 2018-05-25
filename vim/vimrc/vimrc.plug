@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
+Plug 'Shougo/unite.vim'
 Plug 'soramugi/auto-ctags.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chase/vim-ansible-yaml'
@@ -164,6 +165,10 @@ Plug 'jdonaldson/vaxe',{
                         \}
 Plug 'MarcWeber/vim-haxe-syntax',{
                         \       'for' : ['haxe'],
+                        \}
+Plug 'marijnh/tern_for_vim', {
+                        \       'for' : 'javascript',
+                        \       'do': 'npm install',
                         \}
 Plug 'pangloss/vim-javascript',{
                         \       'for' : 'javascript',
