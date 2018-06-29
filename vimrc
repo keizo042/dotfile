@@ -29,9 +29,8 @@ let $PATH = expand("~/.vim/bin") . ':' . $PATH
 set rtp+=~/.vim/bundle/vital.vim
 let s:Vital = vital#of('vital')
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
 let g:go_metalinter_enabled = ['golint', 'errcheck', 'staticcheck', 'gosimple']
-let g:go_fmt_command = "goimports"
 let g:terraform_fmt_on_save = 0
 let g:go_metalinter_command="--min-confidence=1.0"
 
@@ -122,6 +121,8 @@ nnoremap M :<C-u>call append(expand('.'), '')<Cr>j
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+nnoremap ; :
+nnoremap : ;
 
 
 augroup HaskellKeymap
@@ -138,7 +139,13 @@ augroup CoqKeyMap
     autocmd FileType coq nmap <LocalLeader>s :CoqStart<CR>
 augroup End
 
+augroup JS
+    autocmd FileType javascript  noremap <buffer>  <c-g> :call JsBeautify()<cr>
+augroup End
 
+augroup Go
+  autocmd FileType go noremap <buffer> <c-g> :GoMetaLinter<cr>
+augroup END
 
 "command! -buffer -nargs=+ -complete=customlist,s:completePackage ImportAll call s:wrapImportAll(<f-args>)
 "command! -buffer -nargs=* -complete=customlist,s:completePackage ImportAsAll call s:WrapImportAsAll( <f-args>)

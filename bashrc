@@ -13,13 +13,13 @@ alias dc=cd
 alias p=pwd
 alias g=git
 alias gg='ghq get'
+alias c='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
 alias gls='git ls-files'
-alias gcheck="git checkout"
 alias ,,='..'
 alias cl=clear
+alias cdp='cd $(find $(pwd) | peco)'
 #alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
 alias vhasktag="hasktags --ignore-close-implementation --ctags"
-alias v=vim
 if [[ "$(uname)" == "Linux" ]]; then
 
 alias l='ls -F --color=auto'
@@ -71,16 +71,12 @@ idc () {
     edc "$@"
 }
 
-function vc() {
+function v() {
   vim -p "$(ls -a | peco)"
 }
 
 function xvi() {
   vim -p "$(cat -)" "$@" < /dev/tty
-}
-
-function fp() {
-  find "$(pwd)" | peco
 }
 
 function mkrepo {
@@ -172,10 +168,8 @@ export PATH=$PATH:~/bin/go_appengine
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/.opam/system/bin
-export GOPATH=$HOME/go
-export GOPATH=$GOPATH:$HOME/bin/go_appengine/goroot
-export GOPATH=$GOPATH:$HOME/misc
-export CLOUDSDK_PYTHON=/usr/bin/python2
+export GOPATH=$HOME/misc:$HOME/bin/go_appengine/goroot
+export CLOUDSDK_PYTHON=/usr/local/bin/python2
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '$HOME/bin/google-cloud-sdk/path.bash.inc'
@@ -192,7 +186,7 @@ export CLOUDSDK_PYTHON=/usr/bin/python2
 #sudo chmod 4755 /usr/local/sbin/chrome-devel-sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
-bind -x '"\C-p" : fp'
+bind -x '"\C-p" : cdp'
 bind -x '"\C-]": cdg'
 
 if [ -e "$HOME/.bashrc.local" ]; then

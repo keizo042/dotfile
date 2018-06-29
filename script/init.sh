@@ -43,16 +43,19 @@ fi
 
 if [ -z "$(git config --get core.excludesfile)" ]; then
   git config --global core.excludesfile $CONFIG_DIR/dotfile/gitignore 
-  git config --global diff.compactionHeuristic true
-  git config --global user.email "keizo042dev@gmail.com"
-  git config --global user.name "Koichi Nakanishi"
-  if [ ! -e "$HOME/misc/src" ]; then
-    mkdir -p $HOME/misc/src
-    git config --global ghq.root $HOME/misc/src
-  fi
-  if [ ! -e $GOPATH ]; then
-    git config --global ghq.root $GOPATH/src
-  fi
+fi
+
+git config --global diff.compactionHeuristic true
+git config --global user.email "keizo042dev@gmail.com"
+git config --global user.name "Koichi Nakanishi"
+# git config --global url."https://".insteadOf git://
+# git config --global url."git://".insteadOf https://
+if [ ! -e "$HOME/misc/src" ]; then
+  mkdir -p $HOME/misc/src
+  git config --global --add ghq.root $HOME/misc/src
+fi
+if [ ! -e $GOPATH ]; then
+  git config --global --add ghq.root $GOPATH/src
 fi
 
 if [ -x go ]; then
