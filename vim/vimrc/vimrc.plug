@@ -171,6 +171,9 @@ Plug 'marijnh/tern_for_vim', {
                         \       'for' : 'javascript',
                         \       'do': 'npm install',
                         \}
+Plug 'hushicai/tagbar-javascript.vim', {
+                        \       'for' : 'javascript',
+                        \}
 Plug 'pangloss/vim-javascript',{
                         \       'for' : 'javascript',
                         \}

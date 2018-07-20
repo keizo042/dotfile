@@ -28,6 +28,7 @@ noremap \ ,
 "tab
 set smartindent
 set autoindent
+set shiftwidth=2
 setlocal cindent
 set expandtab
 setlocal formatoptions-=r
