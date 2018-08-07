@@ -180,3 +180,7 @@ endfunction
 vnoremap <silent> <leader>h> :call Pointful()<CR>
 
 " }}}
+let g:haskellmode_completion_ghc = 0
+augroup HaskellSettings
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+augroup END
