@@ -36,3 +36,5 @@ bind -x '"\C-p" : cdp'
 bind -x '"\C-]": cdg'
 
 eval "$(anyenv init -)"
+eval "$(rbenv init -)"
+eval "$(ndenv init -)"

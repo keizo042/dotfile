@@ -24,7 +24,6 @@ set wildmenu
 set wildmode=longest:full,full
 
 let mapleader = ","
-noremap \ ,
 "tab
 set smartindent
 set autoindent
@@ -53,7 +52,7 @@ set nofoldenable
 "syntax
 syntax on
 set background=dark
-colo rdark
 set maxmempattern=8000
 
+noremap \ ,
 "set foldmethod=syntax

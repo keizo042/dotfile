@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
 
 CONFIG_DIR=$HOME/.config
+SCRIPT_PATH=$(dirname $BASH_SOURCE;pwd)
 
-if [ ! -e $CONFIG_DIR ]; then
-    mkdir $CONFIG_DIR
-fi
+CREATE_FILES=(
+  $CONFIG_DIR
+  $HOME/.vim
+  $HOME/misc/src
+)
+
+HOME_SYMLINKS=(
+  $SCRIPT_PATH/../ 
+)
+
+VIM_SYMLINKS=(
+  $SCRIPT_PATH/../vimrc
+  $SCRIPT_PATH/vim/user
+)
+	
+
+
 if [ ! -e $HOME/.bashrc ]; then
 ln -s $CONFIG_DIR/dotfile/bashrc $HOME/.bashrc
 fi
@@ -13,17 +28,10 @@ if [ ! -e $HOME/.vimrc ]; then
 ln -s $CONFIG_DIR/dotfile/vimrc $HOME/.vimrc
 fi
 
-if [ ! -e $HOME/.vim/ ]; then
-    mkdir -p $HOME/.vim/
+if [ ! -L $HOME/.vim/user ]; then
+    ln -s $CONFIG_DIR/dotfile/vim/user $HOME/.vim
 fi
 
-if [ ! -L $HOME/.vim/templates ]; then
-    ln -s $CONFIG_DIR/dotfile/vim/templates $HOME/.vim
-fi
-
-if [ ! -L $HOME/.vim/vimrc ]; then
-    ln -s $CONFIG_DIR/dotfile/vim/vimrc $HOME/.vim
-fi
 if [ ! -L $HOME/.vim/bin ]; then
     ln -s $CONFIG_DIR/dotfile/vim/bin $HOME/.vim
 fi
