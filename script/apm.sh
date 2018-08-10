@@ -1,5 +1,15 @@
-#!/bin/sh
-apm install markdown-preview-opener
-apm install atom-tidy-markdown
-apm install atom-csv-markdown
+#!/local/bin/env bash
+
+set -ex
+pkgs=(
+  markdown-preview-opener
+  atom-tidy-markdown
+  atom-csv-markdown
+  )
+
+for i in ${!pkgs[*]}
+do
+  local pkg=${pkgs[$i]}
+  apm install $pkg;
+done
 
