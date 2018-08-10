@@ -1,10 +1,14 @@
 
 function cdp(){
-  local path =$(find $(pwd) -not -path "*/\.*" -type d | peco)
+  local workdir=$(pwd)
+  local path=$(find $workdir -not -regex "${workdir}/.*\..*" -type d | peco)
   if [ -n "$path" ]; then
     return;
   fi
-  cd "$path"
+  if [ -t 1 ]; then
+    return;
+  fi
+  cd "$path" || exit 0;
 }
 
 function cdg() {
