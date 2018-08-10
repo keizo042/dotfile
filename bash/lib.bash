@@ -1,4 +1,12 @@
 
+function cdp(){
+  local path =$(find $(pwd) -not -path "*/\.*" -type d | peco)
+  if [ -n "$path" ]; then
+    return;
+  fi
+  cd "$path"
+}
+
 function cdg() {
   local selected_file=""
   selected_file="$(ghq list --full-path | peco --query "$LBUFFER")"

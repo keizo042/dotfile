@@ -3,7 +3,6 @@ alias ,,='..'
 alias p=pwd
 alias cl=clear
 alias dc=cd
-alias cdp='cd $(find $(pwd) -not -path "*/\.*" -type d | peco)'
 
 alias g=git
 alias gg='ghq get'
