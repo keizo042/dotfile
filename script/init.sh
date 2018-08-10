@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# WIP
+
 CONFIG_DIR=$HOME/.config
 SCRIPT_PATH=$(dirname $BASH_SOURCE;pwd)
 
