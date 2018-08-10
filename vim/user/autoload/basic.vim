@@ -31,7 +31,7 @@ function! s:InstallRustEnv()
     endif
 endfunction
 
-if isdirectory(expand("./.stack-work")) || filereadable(expand("./Setup.hs")) || filereadable(expand("./stack.yaml"))|| (&ft == "HASKELL")
+if isdirectory(expand("./.stack-work")) || filereadable(expand("./Setup.hs")) 
   runtime user/languages/haskell.vim
 endif
 
