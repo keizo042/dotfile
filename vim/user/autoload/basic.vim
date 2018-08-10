@@ -22,10 +22,6 @@ call watchdogs#setup(g:quickrun_config)
 "" vim-easymotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
-nmap s <Plug>(easymotion-overwin-f)
-nmap s <Plug>(easymotion-overwin-f2)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
 
 
 function! s:InstallRustEnv()
@@ -35,13 +31,8 @@ function! s:InstallRustEnv()
     endif
 endfunction
 
-function! s:ReadHaskellVimrc() 
-  let path = expand("~/.vim/vimrc/hs.vimrc")
-  source ~/.vim/vimrc/hs.vimrc
-endfunction
-
 if isdirectory(expand("./.stack-work")) || filereadable(expand("./Setup.hs")) || filereadable(expand("./stack.yaml"))|| (&ft == "HASKELL")
-  call s:ReadHaskellVimrc()
+  runtime user/languages/haskell.vim
 endif
 
 augroup ftpsetting
@@ -79,28 +70,7 @@ augroup BinaryXXD
         au BufWritePost *.{o,exe*} set nomod | endif
 augroup END
 
-"=key mapping==================================
 
-map <S-k> <C-w>k
-map <S-j> <C-w>j
-map <S-l> <C-w>l
-map <S-h> <C-w>h
-map <C-k> <C-w>-
-map <C-j> <C-w>+
-map <C-l> <C-w>>
-map <C-h> <C-w><
-map <C-c> <nop>
-nmap f <C-f>
-nmap F <C-b>
-cmap <silent> qq qa
-
-"useful
-nnoremap M :<C-u>call append(expand('.'), '')<Cr>j
-cmap w!! w !sudo tee > /dev/null %
-nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
-nnoremap <C-g> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap ; :
-nnoremap : ;
 
 
 augroup HaskellKeymap

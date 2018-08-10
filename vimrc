@@ -13,13 +13,13 @@ runtime! user/autoload/*.vim
 augroup FileTypes
   au!
   au BufNewFile,BufRead *.rb :runtime user/languages/ruby.vim
-  au BufNewFile,BufRead *.ml :runtime user/languages/ruby.vim
-  au BufNewFile,BufRead *.hs :runtime user/languages/ruby.vim
-  au BufNewFile,BufRead *.sh :runtime user/languages/ruby.vim
-  au BufNewFile,BufRead *.js :runtime user/languages/ruby.vim
+  au BufNewFile,BufRead *.ml :runtime user/languages/ocaml.vim
+  au BufNewFile,BufRead *.hs :runtime user/languages/haskell.vim
+  au BufNewFile,BufRead *.sh :runtime user/languages/bash.vim
+  au BufNewFile,BufRead *.js :runtime user/languages/javascript.vim
 augroup END
 
 if filereadable($HOME . "/.vimrc.local")
-  source $HOME/.vimrc.local
+  runtime $HOME/.vimrc.local
 endif
 colo rdark
