@@ -21,7 +21,7 @@ DOTFILE_ROOT=$(dirname -- "$(readlink "$BASH_SOURCE")")
 DOTFILE_LIBS=(
 "$DOTFILE_ROOT/bash/alias.bash"
 "$DOTFILE_ROOT/bash/lib.bash"
-"$DOTFILE_ROOT/.config/dotfile/bash/env.bash"
+"$DOTFILE_ROOT/bash/env.bash"
 )
 
 for i in ${!DOTFILE_LIBS[*]}
@@ -34,3 +34,5 @@ done
 
 bind -x '"\C-p" : cdp'
 bind -x '"\C-]": cdg'
+
+eval "$(anyenv init -)"
