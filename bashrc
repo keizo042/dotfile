@@ -5,21 +5,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:$HOME/.opam/system/bin
 EDITOR=vim
-alias b=bkmark
-alias br='hub browse'
+alias ,,='..'
 alias dc=cd
 alias p=pwd
+alias cl=clear
+
 alias g=git
 alias gg='ghq get'
+alias br='hub browse'
 alias c='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
-alias gls='git ls-files'
-alias ,,='..'
-alias cl=clear
-alias cdp='cd $(find $(pwd) | peco)'
-#alias networkminer='/usr/bin/mono $HOME/bin/NetworkMiner_1-6-1/NetworkMiner.exe'
+
 alias vhasktag="hasktags --ignore-close-implementation --ctags"
+alias phptag='ctags -R --regex-php="/^[ \t]*const[ \t]+([a-z0-9_]+)/\1/d/i"'
+
 if [[ "$(uname)" == "Linux" ]]; then
 
 alias l='ls -F --color=auto'
@@ -48,6 +47,7 @@ else
   export PS1='\h@\w \n[\u]\n\$ '
 fi
 
+alias cdp='cd $(find $(pwd) -not path "*/\.*" -type d | peco)'
 function cdg() {
   local selected_file=""
   selected_file="$(ghq list --full-path | peco --query "$LBUFFER")"
@@ -56,27 +56,6 @@ function cdg() {
       cd "${selected_file}" || return
     fi
   fi
-}
-
-sdc () {
-docker-machine start "$1"
-}
-
-edc () {
-eval "$(docker-machine env "$1")"
-}
-
-idc () {
-    sdc "$@"
-    edc "$@"
-}
-
-function v() {
-  vim -p "$(ls -a | peco)"
-}
-
-function xvi() {
-  vim -p "$(cat -)" "$@" < /dev/tty
 }
 
 function mkrepo {
@@ -170,6 +149,7 @@ export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/.opam/system/bin
 export GOPATH=$HOME/misc:$HOME/bin/go_appengine/goroot
 export CLOUDSDK_PYTHON=/usr/local/bin/python2
+export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '$HOME/bin/google-cloud-sdk/path.bash.inc'
@@ -184,7 +164,6 @@ export CLOUDSDK_PYTHON=/usr/local/bin/python2
 #on your shell
 #sudo chown root:root /usr/local/sbin/chrome-devel-sandbox
 #sudo chmod 4755 /usr/local/sbin/chrome-devel-sandbox
-export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 bind -x '"\C-p" : cdp'
 bind -x '"\C-]": cdg'
