@@ -167,10 +167,10 @@ Plug 'jdonaldson/vaxe',{
 Plug 'MarcWeber/vim-haxe-syntax',{
                         \       'for' : ['haxe'],
                         \}
-Plug 'marijnh/tern_for_vim', {
-                        \       'for' : 'javascript',
-                        \       'do': 'npm install',
-                        \}
+"Plug 'marijnh/tern_for_vim', {
+"                        \       'for' : 'javascript',
+"                        \       'do': 'npm install',
+"                        \}
 Plug 'hushicai/tagbar-javascript.vim', {
                         \       'for' : 'javascript',
                         \}
@@ -180,7 +180,9 @@ Plug 'pangloss/vim-javascript',{
 Plug 'maksimr/vim-jsbeautify' ,{
                         \       'for' : 'javascript',
                         \}
-
+"Plug 'othree/yajs.vim', {
+"                        \       'for' : 'javascript',
+"                        \}
 Plug 'keith/swift.vim', {
                         \        'for' : 'swift',
                         \ }

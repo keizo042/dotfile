@@ -22,6 +22,7 @@ DOTFILE_LIBS=(
 "$DOTFILE_ROOT/bash/alias.bash"
 "$DOTFILE_ROOT/bash/lib.bash"
 "$DOTFILE_ROOT/bash/env.bash"
+"$HOME/.bashrc.local"
 )
 
 for i in ${!DOTFILE_LIBS[*]}
@@ -38,3 +39,4 @@ bind -x '"\C-]": cdg'
 eval "$(anyenv init -)"
 eval "$(rbenv init -)"
 eval "$(ndenv init -)"
+
