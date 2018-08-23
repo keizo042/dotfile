@@ -95,3 +95,47 @@ function rmrepo() {
   REPO="${GHQ_ROOT}/${REPO_HOST}/${REPO_AUTHOR}/${REPO_NAME}"
   rm "$REPO"
 }
+
+function rsearch() {
+  local cmd=$(history | peco )
+  if [ -z "$cmd" ]; then
+    return;
+  fi
+  "$cmd"
+}
+alias r=rsearch
+
+
+function cdroot() {
+  local opath=$(pwd)
+  while true;
+  do
+    local cpath=$(pwd)
+    if [ "$cpath" = "/" ]
+    then
+      cd "$opath"
+      return
+    fi
+    if [ "$cpath" = "$HOME" ];
+    then
+      cd $opath
+      return
+    fi
+    if [ -e "$cpath/.git" ]; then
+      return
+    fi
+    cd ..
+  done
+}
+
+export CURLQ_PATH=$HOME/misc
+function curlq (){
+  return;
+  local dest=$1
+  local dir=$(perl curlq.pl)
+  local path=$CURLQ_PATH$path
+  mdkir -p $path
+  cd $path
+  curl $dest
+  cd ..
+}

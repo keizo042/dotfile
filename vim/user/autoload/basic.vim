@@ -47,6 +47,7 @@ augroup ftpsetting
         autocmd! BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=MARKDOWN
         autocmd! BufNewfile,BufRead *.gembox setfiletype RUBY
         autocmd! BufNewFile,BufRead *.hx setfiletype HAXE
+        autocmd! BufNewFile,BufRead *.swift setfiletype swift
         autocmd! FileType erlang setlocal makeprg=erlc\ %
         autocmd! FileType erlang setlocal errorformat=%f:%l:\ %m
         autocmd! BufNewFile,BufRead *.go nnoremap <C-n> <C-x><C-o>

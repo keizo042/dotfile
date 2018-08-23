@@ -34,9 +34,9 @@ do
 done
 
 bind -x '"\C-p" : cdp'
-bind -x '"\C-]": cdg'
+bind -x '"\C-]" : cdg'
+bind -x '"\C-j" : cdroot'
 
 eval "$(anyenv init -)"
 eval "$(rbenv init -)"
 eval "$(ndenv init -)"
-

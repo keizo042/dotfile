@@ -157,9 +157,9 @@ Plug 'leafgarland/typescript-vim',{
 "Plug 'clausreinke/typescript-tools',{
 "                        \       'for' : ['typescript'],
 "                        \ }
-Plug 'clausreinke/typescript-tools.vim', {
-                        \       'for' : ['typescript'],
-                        \ }
+"Plug 'clausreinke/typescript-tools.vim', {
+"                        \       'for' : ['typescript'],
+"                        \ }
 "haxe
 Plug 'jdonaldson/vaxe',{
                         \       'for' : ['haxe']
@@ -196,6 +196,9 @@ Plug 'vim-latex/vim-latex',{
 "                        \       'for' : 'xml',
 "                        \       }
 "                        \ }
+"Plug 'm-kat/aws-vim',{
+"                        \       'for' : [ 'cloudformation' ],
+"                        \}
 Plug 'elzr/vim-json',{
                         \       'for' : [ 'json' ],
                         \}
@@ -215,6 +218,10 @@ Plug 'smerrill/vcl-vim-plugin',{
 Plug 'jvoorhis/coq.vim', {
                         \   'for' : [ 'coq' ],
                         \ }
+Plug 'keith/swift.vim', {
+                        \   'for' : [ 'swift' ],
+                        \ }
+
 "Plug 'eagletmt/coqtop-vim', {
 "                        \ 'for' : [ 'coq' ],
 "                        \ }
