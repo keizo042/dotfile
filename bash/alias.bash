@@ -5,6 +5,8 @@ alias cl=clear
 alias dc=cd
 
 alias g=git
+alias gp='git pul'
+alias gf='git fetch'
 alias gg='ghq get'
 alias br='hub browse'
 alias c='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
