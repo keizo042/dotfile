@@ -51,6 +51,11 @@ if [ ! -L $HOME/.ctags ]; then
   ln -s $CONFIG_DIR/dotfile/ctags $HOME/.ctags
 fi
 
+if [ -L $HOME/.tmux.conf ];
+then
+  ln -s $CONFIG_DIR/dotfile/tmux.conf $HOME/.tmux.conf
+fi
+
 if [ -z "$(git config --get core.excludesfile)" ]; then
   git config --global core.excludesfile $CONFIG_DIR/dotfile/gitignore 
 fi
