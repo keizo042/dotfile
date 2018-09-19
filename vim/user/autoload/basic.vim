@@ -40,6 +40,7 @@ augroup ftpsetting
         autocmd! FileType * setlocal formatoptions-=ro
         autocmd! BufNewFile,BufRead *.ts setf typescript
         autocmd  BufNewFile,BufRead *.vcl setf vcl
+        autocmd  BufNewFile,BufRead *.dig setf yaml
         autocmd! BufNewFile,BufRead *.erl setf erlang
         autocmd! BufNewFile,BufRead *.scala setfiletype scala 
         autocmd! BufNewFile,BufRead *vim* setfiletype VIM 
