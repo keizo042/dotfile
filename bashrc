@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
 
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -23,6 +24,7 @@ DOTFILE_LIBS=(
 "$DOTFILE_ROOT/bash/lib.bash"
 "$DOTFILE_ROOT/bash/env.bash"
 "$HOME/.bashrc.local"
+"$HOME/.bashrc.tmp"
 )
 
 for i in ${!DOTFILE_LIBS[*]}
@@ -40,3 +42,7 @@ bind -x '"\C-j" : cdroot'
 eval "$(anyenv init -)"
 eval "$(rbenv init -)"
 eval "$(ndenv init -)"
+
+export PATH=$PATH:$HOME/.anyenv/envs/ndenv/bin # for ndenv, node version manager
+
+export PATH=$PATH:"$(npm bin -g)"
