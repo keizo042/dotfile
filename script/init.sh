@@ -3,6 +3,7 @@
 # WIP
 
 CONFIG_DIR=$HOME/.config
+# CONFIG_DIR=$(cd $(dirname $0)/.. && pwd)/
 SCRIPT_PATH=$(dirname $BASH_SOURCE;pwd)
 
 CREATE_FILES=(
