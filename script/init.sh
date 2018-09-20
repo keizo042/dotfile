@@ -52,7 +52,7 @@ if [ ! -L $HOME/.ctags ]; then
   ln -s $CONFIG_DIR/dotfile/ctags $HOME/.ctags
 fi
 
-if [ -L $HOME/.tmux.conf ];
+if [ ! -L $HOME/.tmux.conf ];
 then
   ln -s $CONFIG_DIR/dotfile/tmux.conf $HOME/.tmux.conf
 fi
