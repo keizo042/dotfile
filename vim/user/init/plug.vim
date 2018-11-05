@@ -154,6 +154,9 @@ Plug 'ynkdir/vim-vimlparser', {
 Plug 'leafgarland/typescript-vim',{
                         \       'for' : ['typescript'],
                         \ }
+Plug 'Quramy/tsuquyomi', {
+                        \       'for': ['typescript'],
+                        \ }
 "Plug 'clausreinke/typescript-tools',{
 "                        \       'for' : ['typescript'],
 "                        \ }
@@ -171,8 +174,12 @@ Plug 'MarcWeber/vim-haxe-syntax',{
 "                        \       'for' : 'javascript',
 "                        \       'do': 'npm install',
 "                        \}
+Plug 'ternjs/tern_for_vim', {
+                        \       'for': 'javascript',
+                        \ }
 Plug 'hushicai/tagbar-javascript.vim', {
                         \       'for' : 'javascript',
+                        \       'do': 'npm i -g esctags',
                         \}
 Plug 'pangloss/vim-javascript',{
                         \       'for' : 'javascript',

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "lib": ["ES2015"],
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitReturns": true
+  }
+}

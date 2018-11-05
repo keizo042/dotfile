@@ -4,7 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] # && exec tmux
 
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
   . $(brew --prefix)/etc/bash_completion

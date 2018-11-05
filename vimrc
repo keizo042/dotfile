@@ -24,3 +24,5 @@ if filereadable($HOME . "/.vimrc.local")
   runtime $HOME/.vimrc.local
 endif
 colo rdark
+set fileformats=unix,dos,mac
+let g:tagbar_phpctags_bin="~/.vim/bin/phpctags"
