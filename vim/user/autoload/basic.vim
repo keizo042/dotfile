@@ -6,7 +6,7 @@ endif
 "plugin env variable
 set rtp+=~/.vim/plugged/vital.vim
 let s:Vital = vital#of('vital')
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+"exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 let g:go_metalinter_autosave = 0
 "let g:go_fmt_command = "golint"
 let g:terraform_fmt_on_save = 0
@@ -23,6 +23,19 @@ call watchdogs#setup(g:quickrun_config)
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
 
+if executable('golsp')
+  augroup LspGo
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'go-lang',
+        \ 'cmd': {server_info->['bigo', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+  augroup END
+endif
+
+let g:lsp_async_completion = 1
 
 function! s:InstallRustEnv()
     if !isdirectory(expand("~/bin/racer"))
