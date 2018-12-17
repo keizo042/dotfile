@@ -64,6 +64,7 @@ fi
 git config --global diff.compactionHeuristic true
 git config --global user.email "keizo042dev@gmail.com"
 git config --global user.name "Koichi Nakanishi"
+git config --global core.pager "LESSCHARSET=utf-8 less"
 # git config --global url."https://".insteadOf git://
 # git config --global url."git://".insteadOf https://
 if [ ! -e "$HOME/misc/src" ]; then
