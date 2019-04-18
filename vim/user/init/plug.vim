@@ -4,17 +4,20 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'google/vim-maktaba'
+Plug 'bazelbuild/vim-bazel'
 Plug 'Shougo/unite.vim'
 Plug 'soramugi/auto-ctags.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'chase/vim-ansible-yaml'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-scripts/rdark'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-jp/vital.vim'
-Plug 'haya14busa/incsearch.vim'
-Plug 'vim-jp/vimdoc-ja'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree', { 'tag': '4.0.0'}
@@ -55,7 +58,8 @@ Plug 'osyo-manga/vim-marching', {
 Plug 'osyo-manga/shabadou.vim'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'rodjek/vim-puppet'
-Plug 'fatih/vim-go', { 'for' : [ 'go' ] , 'do': ':GoInstallBinaries'}
+"Plug 'fatih/vim-go', { 'for' : [ 'go' ] , 'do': ':GoInstallBinaries'} //
+"TODO(keizo042): Remove
 Plug 'rust-lang/rust.vim', { 'for' :  'rust' }
 Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
 Plug 'slim-template/vim-slim', {
@@ -65,16 +69,12 @@ Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
 
 Plug 'vim-php/tagbar-phpctags.vim', { 'for' : 'php'}
 
-"haskell
 Plug 'nbouscal/vim-stylish-haskell',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
 Plug 'neomake/neomake',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
-"Plug 'itchyny/vim-haskell-indent',{
-"                        \   'for' : [ 'haskell' ] ,
-"                        \ }
 Plug 'eagletmt/ghcmod-vim',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
@@ -94,9 +94,6 @@ Plug 'dan-t/vim-hsimport', {
                         \ }
 
 
-"Plug 'cohama/the-ocamlspot.vim', {
-"                        \       'for' : 'ocaml',
-"                        \ }
 Plug 'rgrinberg/vim-ocaml', {
                         \       'for' : 'ocaml',
                         \ }
@@ -113,18 +110,6 @@ Plug 'vim-erlang/vim-erlang-omnicomplete', {
                         \       'for' : 'erlang' ,
                         \ }
 
-" erlファイルをerlangとして認識する
-
-"Plug 'menezrick/vimerl'
-
-
-"scala
-Plug 'derekwyatt/vim-scala', {
-                        \   'for' : [ 'scala' ],
-                        \ }
-Plug 'gre/play2vim',{
-                        \   'for' : [ 'scala' ],
-                        \}
 "clojure
 Plug 'guns/vim-clojure-static', {
                         \       'for' : [ 'clojure' ],
@@ -142,39 +127,18 @@ Plug 'kongo2002/fsharp-vim', {
 Plug 'zah/nimrod.vim', {
                         \       'for' : 'nim',
                         \ }
-"vim
-Plug 'ynkdir/vim-vimlparser', {
-                        \       'for' : [ 'vim'],
-                        \}
-"ocaml
-"Plug 'cohama/the-ocamlspot.vim',{
-"                        \       'for' : [ 'ocaml' ],
-"                        \ }
-
-"TypeScript
 Plug 'leafgarland/typescript-vim',{
                         \       'for' : ['typescript'],
                         \ }
 Plug 'Quramy/tsuquyomi', {
-                        \       'for': ['typescript'],
+                        \       'for': ['typescript', 'javascript'],
                         \ }
-"Plug 'clausreinke/typescript-tools',{
-"                        \       'for' : ['typescript'],
-"                        \ }
-"Plug 'clausreinke/typescript-tools.vim', {
-"                        \       'for' : ['typescript'],
-"                        \ }
-"haxe
 Plug 'jdonaldson/vaxe',{
                         \       'for' : ['haxe']
                         \}
 Plug 'MarcWeber/vim-haxe-syntax',{
                         \       'for' : ['haxe'],
                         \}
-"Plug 'marijnh/tern_for_vim', {
-"                        \       'for' : 'javascript',
-"                        \       'do': 'npm install',
-"                        \}
 Plug 'ternjs/tern_for_vim', {
                         \       'for': 'javascript',
                         \ }
@@ -188,33 +152,15 @@ Plug 'pangloss/vim-javascript',{
 Plug 'maksimr/vim-jsbeautify' ,{
                         \       'for' : 'javascript',
                         \}
-"Plug 'othree/yajs.vim', {
-"                        \       'for' : 'javascript',
-"                        \}
 Plug 'keith/swift.vim', {
                         \        'for' : 'swift',
                         \ }
-"latex
-Plug 'vim-latex/vim-latex',{
-                        \       'for' : [ 'tex' ],
-                        \}
-"data structure
-"Plug 'othree/xml.vim', {
-"                        \ 'autoload' : {
-"                        \       'for' : 'xml',
-"                        \       }
-"                        \ }
-"Plug 'm-kat/aws-vim',{
-"                        \       'for' : [ 'cloudformation' ],
-"                        \}
 Plug 'elzr/vim-json',{
                         \       'for' : [ 'json' ],
                         \}
-Plug 'ingydotnet/yaml-vim',{
-                        \       'for' : [ 'yaml' ],
-                        \}
-Plug 'cespare/vim-toml', {
-                        \       'for' : [ 'toml' ],
+Plug 'pearofducks/ansible-vim', {
+                        \       'for' : [ 'ansible.yaml' ],
+                        \       'do': 'cd ./UltiSnips; ./generate.py' ,
                         \}
 Plug 'pld-linux/vim-syntax-vcl',{
                         \       'for' : [ 'vcl' ],
@@ -230,15 +176,4 @@ Plug 'keith/swift.vim', {
                         \   'for' : [ 'swift' ],
                         \ }
 
-"Plug 'eagletmt/coqtop-vim', {
-"                        \ 'for' : [ 'coq' ],
-"                        \ }
-"Plug 'vim-scripts/CoqIDE', {
-"                        \ 'for' : [ 'coq' ],
-"                        \ }
-
-""linux only
-"Plug 'itchyny/calendar.vim', {
-"                        \ 'disabled' : !has('unix'),
-"                        \}
 call plug#end()

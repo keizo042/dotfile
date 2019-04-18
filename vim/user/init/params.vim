@@ -23,6 +23,7 @@ set tags=tags;/,codex.tags;/
 set wildmenu
 set wildmode=longest:full,full
 
+let g:tsuquyomi_javascript_support=1
 let mapleader = ","
 "tab
 set smartindent
