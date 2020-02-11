@@ -175,5 +175,6 @@ Plug 'jvoorhis/coq.vim', {
 Plug 'keith/swift.vim', {
                         \   'for' : [ 'swift' ],
                         \ }
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
