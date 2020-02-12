@@ -1,5 +1,5 @@
 
-let g:go_def_mode='gopls'
+let g:go_def_mode='guru'
 
 augroup LspGo
   au!

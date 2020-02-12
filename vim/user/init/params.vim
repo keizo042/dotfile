@@ -57,3 +57,19 @@ set maxmempattern=8000
 
 noremap \ ,
 "set foldmethod=syntax
+
+" ctrlp.vim
+let g:ctrlp_use_caching=0
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
+if executable('fzf')
+  let g:fz_command = 'fzf'
+  let g:fz_command_files = ''
+  let g:fz_command_options_action = '--expect=%s'
+  let g:ctrlp_map = ''
+  nnoremap <silent> <C-p> :call fz#run({ 'type': 'cmd', 'cmd': 'git ls-files' })<CR>
+endif
+
+"ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif

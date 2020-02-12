@@ -11,7 +11,7 @@ export BREW_PREFIX=/usr/local
 
 if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
   source $BREW_PREFIX/etc/bash_completion
-  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
   #export PS1='\h@\w \n[\u]\n\$ '
   export PS1='\h@\w $(__git_ps1 "(%s)")[\u]\n\$ '
 else
@@ -37,8 +37,6 @@ do
 done
 
 bind -x '"\C-p" : source cdp'
-bind -x '"\C-]" : source cdg'
-bind -x '"\C-e" : source envinit'
+bind -x '"\C-]" : source repo'
 
-
-#export PATH=$PATH:$HOME/.anyenv/envs/ndenv/bin # for ndenv, node version manager
+complete -F _git g

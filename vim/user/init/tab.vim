@@ -21,5 +21,5 @@ endif
 augroup LanguageSettings
         autocmd!
         autocmd! BufNewFile,BufRead *.lua,*.yml,*.yaml,*.cabal,*.html,*.cc,*.cpp,*.cxx,*.xx,*.tmlp,*.rb,*.hs,*.ml,*.scala call s:TabSizeDefine(2)
-        autocmd! BufNewFile,BufRead *.py,*.c,*.ts,*.cxx,*.hx,*.d, call s:TabSizeDefine(4)
+        autocmd! BufNewFile,BufRead *.py,*.c,*.ts,*.cxx,*.hx,*.d,*.php call s:TabSizeDefine(4)
 augroup END

@@ -4,6 +4,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
+Plug 'mileszs/ack.vim'
+Plug 'mattn/vim-fz'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -25,6 +27,7 @@ Plug 'scrooloose/nerdtree', { 'tag': '4.0.0'}
 Plug 'thinca/vim-ref'
 Plug 'thinca/vim-quickrun'
 Plug 'mattn/sonictemplate-vim'
+Plug 'udalov/kotlin-vim'
 Plug 'Shougo/vimproc.vim' 
 Plug 'osyo-manga/vim-reunions' 
 Plug 'let-def/vimbufsync'
@@ -58,8 +61,8 @@ Plug 'osyo-manga/vim-marching', {
 Plug 'osyo-manga/shabadou.vim'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'rodjek/vim-puppet'
-"Plug 'fatih/vim-go', { 'for' : [ 'go' ] , 'do': ':GoInstallBinaries'} //
-"TODO(keizo042): Remove
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'fatih/vim-go', { 'for' : [ 'go' ] , 'do': ':GoInstallBinaries'} 
 Plug 'rust-lang/rust.vim', { 'for' :  'rust' }
 Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
 Plug 'slim-template/vim-slim', {
