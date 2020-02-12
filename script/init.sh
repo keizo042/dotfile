@@ -71,9 +71,3 @@ if [ ! -e "$HOME/misc/src" ]; then
   mkdir -p $HOME/misc/src
   git config --global --add ghq.root $HOME/misc/src
 fi
-
-if [ -x go ]; then
-  go get github.com/alecthomas/gometalinter
-fi
-
-exit 1
