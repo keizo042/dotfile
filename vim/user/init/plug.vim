@@ -70,8 +70,9 @@ Plug 'slim-template/vim-slim', {
                         \}
 Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
 
-Plug 'vim-php/tagbar-phpctags.vim', { 'for' : 'php'}
-
+Plug 'vim-php/tagbar-phpctags.vim', { 
+                        \       'for' : 'php',
+                        \       }
 Plug 'nbouscal/vim-stylish-haskell',{
                         \   'for' : [ 'haskell' ] ,
                         \ }
@@ -161,10 +162,10 @@ Plug 'keith/swift.vim', {
 Plug 'elzr/vim-json',{
                         \       'for' : [ 'json' ],
                         \}
-Plug 'pearofducks/ansible-vim', {
-                        \       'for' : [ 'ansible.yaml' ],
-                        \       'do': 'cd ./UltiSnips; ./generate.py' ,
-                        \}
+"Plug 'pearofducks/ansible-vim', {
+"                        \       'for' : [ 'ansible.yaml' ],
+"                        \       'do': 'cd ./UltiSnips; ./generate.py' ,
+"                        \}
 Plug 'pld-linux/vim-syntax-vcl',{
                         \       'for' : [ 'vcl' ],
                         \}

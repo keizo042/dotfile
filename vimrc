@@ -25,7 +25,6 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 "colo rdark
 set fileformats=unix,mac,dos
-"let g:tagbar_phpctags_bin="~/.vim/bin/phpctags"
 set encoding=utf8
 
 let g:ctrlp_use_caching=0
@@ -56,7 +55,6 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 colo rdark
 set fileformats=unix,mac,dos
-"let g:tagbar_phpctags_bin="~/.vim/bin/phpctags"
 set encoding=utf8
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
