@@ -10,6 +10,8 @@ set rtp+=~/.vim/
 runtime! user/init/*.vim
 runtime! user/autoload/*.vim
 
+
+
 augroup FileTypes
   au!
   au BufNewFile,BufRead *.rb :runtime user/languages/ruby.vim
@@ -23,6 +25,8 @@ augroup END
 if filereadable($HOME . "/.vimrc.local")
   runtime $HOME/.vimrc.local
 endif
+
+
 "colo rdark
 set fileformats=unix,mac,dos
 set encoding=utf8
