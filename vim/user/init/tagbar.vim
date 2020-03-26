@@ -89,7 +89,7 @@ let g:tagbar_type_rust = {
       \ 't:type aliases:1:0',
       \ 'v:constants:1:0',
       \ 'M:macros:1',
-      \ 'm:fields:1:0',
+      \ 'm:fields:1:1',
       \ 'e:enum variants:1:0',
       \ 'P:methods:1',
   \ ],
