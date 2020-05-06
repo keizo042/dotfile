@@ -5,6 +5,8 @@ Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
 Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/vim-fz'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
