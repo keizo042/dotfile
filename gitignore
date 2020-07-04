@@ -2,6 +2,7 @@ tags
 tag
 TAGS
 TAG
+.env
 *.o
 *.hi
 *.a

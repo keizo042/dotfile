@@ -40,3 +40,5 @@ augroup Racer
     autocmd FileType rust nmap <buffer> gn         <Plug>(rust-def-tab)
     autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
 augroup END
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
