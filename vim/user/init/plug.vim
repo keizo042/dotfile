@@ -37,6 +37,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'osyo-manga/vim-reunions' 
 Plug 'let-def/vimbufsync'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'aklt/plantuml-syntax', { 'for' : [ 'plantuml' ] }
 
 " Plug 'aharisu/vise'
 " Plug 'mattn/lisper-vim'
