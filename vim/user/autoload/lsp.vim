@@ -13,3 +13,14 @@ augroup LspGo
   "autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
   "autocmd FileType go nmap <buffer> ,p <plug>(lsp-previous-error)
 augroup END
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+augroup LspPython
+autocmd FileType python setlocal omnifunc=lsp#complete
+augroup END
