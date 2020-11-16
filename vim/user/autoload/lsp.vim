@@ -21,6 +21,8 @@ if executable('pyls')
         \ 'whitelist': ['python'],
         \ })
 endif
+
 augroup LspPython
-autocmd FileType python setlocal omnifunc=lsp#complete
+  autocmd FileType python setlocal omnifunc=lsp#complete
+  autocmd FileType python nnoremap <C-]> :<C-u>LspDefinition<CR>
 augroup END
