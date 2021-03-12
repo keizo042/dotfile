@@ -128,3 +128,9 @@ let g:tagbar_type_typescript = {
   \ ],                                                                            
   \ 'sort' : 0                                                                    
 \ }
+
+let g:tagbar_type_jsonnet = {                                                   
+    \ 'ctagstype' : 'jsonnet',                                                    
+    \ 'kinds'     : [                                                             
+        \ 'f:function', 'm:member', 'v:variable']                                 
+    \ }

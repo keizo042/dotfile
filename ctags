@@ -46,3 +46,9 @@
 --regex-Rust=/^[ \t]*(pub[ \t]+)?(static|const)[ \t]+(mut[ \t]+)?([a-zA-Z0-9_]+)/\4/c,consts,static constants/
 --regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?trait[ \t]+([a-zA-Z0-9_]+)/\3/t,traits,traits/
 --regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?impl([ \t\n]*<[^>]*>)?[ \t]+(([a-zA-Z0-9_:]+)[ \t]*(<[^>]*>)?[ \t]+(for)[ \t]+)?([a-zA-Z0-9_]+)/\5 \7 \8/i,impls,trait implementations/
+--langdef=Jsonnet
+--langmap=Jsonnet:.jsonnet
+--langmap=Jsonnet:.libsonnet
+--regex-jsonnet=/^[ \t]*local ([A-Za-z0-9_]+)/\1/v,variable/
+--regex-jsonnet=/^[ \t]*([A-Za-z0-9_]+):::?/\1/m,member/
+--regex-jsonnet=/^[ \t]*([A-Za-z0-9_]+)\([^)]*\):::?/\1/f,function/
