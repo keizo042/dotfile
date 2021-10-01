@@ -39,4 +39,7 @@ done
 bind -x '"\C-p" : source cdp'
 bind -x '"\C-]" : source repo'
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f /Users/keizo042/google-cloud-sdk/completion.bash.inc ] && . /Users/keizo042/google-cloud-sdk/completion.bash.inc
+[ -f /Users/keizo042/google-cloud-sdk/path.bash.inc ] && . /Users/keizo042/google-cloud-sdk/path.bash.inc
 complete -F _git g
