@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
+Plug 'jjo/vim-cue'
 Plug 'pantharshit00/vim-prisma'
 Plug 'google/vim-jsonnet'
 Plug 'udalov/kotlin-vim'
