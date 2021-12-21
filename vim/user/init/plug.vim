@@ -81,7 +81,7 @@ Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
 
 Plug 'vim-php/tagbar-phpctags.vim', { 
                         \       'for' : 'php',
-                        \       'dir', '~/.vim/plugged/tagbar-phpctags.vim/',
+                        \       'dir': '~/.vim/plugged/tagbar-phpctags.vim/',
                         \       'do': 'make'
                         \       }
 Plug 'nbouscal/vim-stylish-haskell',{
