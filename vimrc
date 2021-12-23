@@ -10,4 +10,3 @@ set rtp+=~/.vim/
 runtime! user/init/*.vim
 runtime! user/autoload/*.vim
 
-let g:auto_ctags_set_tags_option = 1

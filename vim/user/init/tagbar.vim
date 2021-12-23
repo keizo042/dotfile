@@ -134,3 +134,5 @@ let g:tagbar_type_jsonnet = {
     \ 'kinds'     : [                                                             
         \ 'f:function', 'm:member', 'v:variable']                                 
     \ }
+
+let g:auto_ctags_set_tags_option = 1
