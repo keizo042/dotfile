@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
+Plug 'liuchengxu/vista.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'jjo/vim-cue'
 Plug 'pantharshit00/vim-prisma'
