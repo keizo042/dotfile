@@ -7,6 +7,8 @@ Plug 'junegunn/vim-plug',
 Plug 'liuchengxu/vista.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'jjo/vim-cue'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jparise/vim-graphql'
 Plug 'pantharshit00/vim-prisma'
 Plug 'google/vim-jsonnet'
 Plug 'udalov/kotlin-vim'
