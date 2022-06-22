@@ -5,9 +5,10 @@ Plug 'junegunn/vim-plug',
             \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
 
 Plug 'liuchengxu/vista.vim'
+Plug 'mattn/vim-sqlfmt'
 Plug 'mattn/vim-lsp-settings'
 Plug 'jjo/vim-cue'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jparise/vim-graphql'
 Plug 'pantharshit00/vim-prisma'
 Plug 'google/vim-jsonnet'

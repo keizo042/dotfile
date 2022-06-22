@@ -9,3 +9,5 @@ TAG
 .cscope
 .DS_Store 
 telepresence.log
+.vscode/
+.envrc
