@@ -4,4 +4,4 @@ let g:vista#renderer#enable_icon = 0
 
 let g:vista_default_executive = 'vim_lsp'
 
-nnoremap  <C-l> :Vista!!<Cr>
+nnoremap  <C-e> :Vista!!<cr>
