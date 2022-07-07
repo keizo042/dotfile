@@ -1,12 +1,19 @@
-if has('vim_starting')
-  set rtp+=~/.vim/plugged/vim-plug
-  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-    echo 'install vim-plug...'
-    call system('mkdir -p ~/.vim/plugged/vim-plug')
-    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-  end
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-set rtp+=~/.vim/
-runtime! user/init/*.vim
-runtime! user/autoload/*.vim
+set rtp+=~/dev/src/github.com/keizo042/dotfile/vim
+for f in split(glob('~/dev/src/github.com/keizo042/dotfile/vim/user/init/*.vim'), '\n')
+    exe 'source' f
+endfor
+for f in split(glob('~/dev/src/github.com/keizo042/dotfile/vim/user/autoload/*.vim'), '\n')
+    exe 'source' f
+endfor
+source ~/.vimrc.local
+let g:vista_executive_for = {
+  \ 'cpp': 'vim_lsp',
+  \ 'php': 'vim_lsp',
+  \ }
+nnoremap <expr> <C-]> execute('LspPeekDefinition') =~ "not supported" ? "\<C-]>" : ":LspDefinition<cr>"
 

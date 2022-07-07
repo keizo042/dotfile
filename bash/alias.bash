@@ -9,6 +9,12 @@ alias ls='ls -F --color=auto'
 alias sl='ls -F --color=auto'
 alias la='ls -aF --color=auto'
 alias ll='ls -lF --color=auto'
+alias s='git status'
+alias m='git commit --amend'
+alias p='git pull'
+alias u='git push'
+alias uu='git push -u -f'
+alias o='gh browser --web'
 }
 
 function aliasDarwinDefine () {

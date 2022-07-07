@@ -84,7 +84,8 @@ Plug 'slim-template/vim-slim', {
                         \}
 Plug 'vim-scripts/ruby-matchit',  {'for' : 'ruby'}
 
-Plug 'vim-php/tagbar-phpctags.vim', { 
+Plug 'vim-php/phpctags', {'do': 'composer install' }
+Plug 'vim-php/tagbar-phpctags.vim', {
                         \       'for' : 'php',
                         \       'dir': '~/.vim/plugged/tagbar-phpctags.vim/',
                         \       'do': 'make'
